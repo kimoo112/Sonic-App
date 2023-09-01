@@ -9,6 +9,18 @@ class Assets {
   /// assets/icons/logo.png
   static const String iconsLogo = "assets/icons/logo.png";
 
+  /// Assets for imagesArrivalsShoes
+  /// assets/images/ArrivalsShoes.png
+  static const String imagesArrivalsShoes = "assets/images/ArrivalsShoes.png";
+
+  /// Assets for imagesHomeShoes1
+  /// assets/images/homeShoes1.png
+  static const String imagesHomeShoes1 = "assets/images/homeShoes1.png";
+
+  /// Assets for imagesHomeShoes2
+  /// assets/images/homeShoes2.png
+  static const String imagesHomeShoes2 = "assets/images/homeShoes2.png";
+
   /// Assets for imagesLegWIthShoes
   /// assets/images/LegWIthShoes.png
   static const String imagesLegWIthShoes = "assets/images/LegWIthShoes.png";
@@ -21,9 +33,21 @@ class Assets {
   /// assets/images/shoes3.png
   static const String imagesShoes3 = "assets/images/shoes3.png";
 
+  /// Assets for vectorsDrawer
+  /// assets/vectors/Drawer.svg
+  static const String vectorsDrawer = "assets/vectors/Drawer.svg";
+
+  /// Assets for vectorsNew
+  /// assets/vectors/new.png
+  static const String vectorsNew = "assets/vectors/new.png";
+
   /// Assets for vectorsNikeLogo
   /// assets/vectors/nikeLogo.png
   static const String vectorsNikeLogo = "assets/vectors/nikeLogo.png";
+
+  /// Assets for vectorsStars
+  /// assets/vectors/stars.png
+  static const String vectorsStars = "assets/vectors/stars.png";
 
   /// Assets for vectorsUnderLineVector
   /// assets/vectors/underLineVector.png

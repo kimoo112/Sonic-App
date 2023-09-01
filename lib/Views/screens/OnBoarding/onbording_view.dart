@@ -55,7 +55,7 @@ class OnboardingView extends StatelessWidget {
                 child: CustomButton(
                   name: 'Get Started',
                   onTap: () {
-                    navigateToPR(SigninView(), context);
+                    navigateToPR(const SigninView(), context);
                   },
                 ))
           ],

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoes_store/Helpers/colors.dart';
-import 'Views/screens/splash_view.dart';
+import 'package:shoes_store/Views/screens/base_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Sonic());
 
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
@@ -15,8 +15,8 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Sonic extends StatelessWidget {
+  const Sonic({super.key});
 
   // This widget is the root of your application.
   @override
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'Raleway',
               useMaterial3: true,
             ),
-            home: const SplashView(),
+            home: const BaseView(),
           );
         });
   }

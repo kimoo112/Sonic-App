@@ -27,7 +27,6 @@ class CustomSearchBar extends StatelessWidget {
         cursorColor: cBlue,
         decoration: InputDecoration(
           prefixIcon:
-              // Lottie.asset('assets/images/94375-search-new.json',width: 5),
               const Icon(
             CupertinoIcons.search,
             color: cBlue,

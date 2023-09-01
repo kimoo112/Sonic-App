@@ -1,41 +1,103 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shoes_store/Helpers/colors.dart';
+import 'package:shoes_store/Views/widgets/arrivals_container.dart';
 import 'package:shoes_store/Views/widgets/custom_searchbar.dart';
 
-class HomeView extends StatelessWidget {
+import '../../Helpers/images.dart';
+import '../widgets/badge_icon.dart';
+import '../widgets/popular_list_view.dart';
+import '../widgets/see_all.dart';
+import '../widgets/tab_bar.dart';
+
+class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: cTransparent,
+        scrolledUnderElevation: 0,
         title: const Text(
           'Explore',
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
-        leading: const Icon(
-          CupertinoIcons.list_bullet_indent,
-          color: cBackGround,
-        ),
+        leading: leadingButton(),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 12.0),
+            child: BadgeIcon(),
+          )
+        ],
       ),
-      body:  Padding(
+      body: Padding(
         padding: EdgeInsets.all(12.0.sp),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomSearchBar(),
-            SizedBox(height: 22.h),
-            Text(
-              'Select Category',
-              style: TextStyle(
-                  letterSpacing: .5, fontWeight: FontWeight.w600, fontSize: 18),
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CustomSearchBar(),
+              SizedBox(height: 22.h),
+              selectCategory(),
+              SizedBox(height: 22.h),
+              SizedBox(
+                child: TabBarWidget(tabController: _tabController),
+              ),
+              SizedBox(height: 11.h),
+              const SeeAllRow(),
+              SizedBox(height: 11.h),
+              const PopularListView(),
+              const SeeAllRow(
+                category: 'New Arrivals',
+              ),
+              SizedBox(height: 11.h),
+              const ArrivalsContainer(),
+              SizedBox(height: 60.h),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  InkWell leadingButton() {
+    return InkWell(
+        borderRadius: BorderRadius.circular(33),
+        onTap: () {},
+        child: SvgPicture.asset(
+          Assets.vectorsDrawer,
+          width: 20,
+          height: 2,
+          fit: BoxFit.none,
+        ));
+  }
+
+  Text selectCategory() {
+    return const Text(
+      'Select Category',
+      style: TextStyle(
+          letterSpacing: .5, fontWeight: FontWeight.w600, fontSize: 18),
     );
   }
 }

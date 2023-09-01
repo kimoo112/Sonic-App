@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_store/Views/screens/base_screen.dart';
 import 'signin_view.dart';
-import '../home_view.dart';
 import '../../widgets/custom_textfield.dart';
 
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
 import '../../widgets/custom_button.dart';
-
 
 class SignupView extends StatefulWidget {
   const SignupView({Key? key}) : super(key: key);
@@ -61,7 +60,7 @@ class _SignupViewState extends State<SignupView> {
                                       onTap: () {
                                         if (formKey.currentState!.validate()) {
                                           navigateToPR(
-                                              const HomeView(), context);
+                                              const BaseView(), context);
                                         } else {
                                           autovalidateMode =
                                               AutovalidateMode.always;
@@ -102,7 +101,7 @@ class _SignupViewState extends State<SignupView> {
               const Text('Already Have Account?'),
               TextButton(
                 onPressed: () {
-                  navigateToPR( SigninView(), context);
+                  navigateToPR(const SigninView(), context);
                 },
                 style: TextButton.styleFrom(
                   padding:

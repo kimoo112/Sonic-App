@@ -1,8 +1,8 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:flutter/material.dart';
-import '../../Helpers/colors.dart';
-import '../../Helpers/images.dart';
-import 'OnBoarding/onboarding_base.dart';
+import '../../../Helpers/colors.dart';
+import '../../../Helpers/images.dart';
+import '../OnBoarding/onboarding_base.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);

@@ -24,9 +24,8 @@ class _OnboardingBaseState extends State<OnboardingBase> {
     const SecondOnbordingView(),
     const ThirdOnboardingView(),
   ];
-  final _controller = PageController();
+  final  _controller= PageController();
   int position = 0;
-  bool isVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +41,7 @@ class _OnboardingBaseState extends State<OnboardingBase> {
               });
             },
             controller: _controller,
-            children: const [
-              OnboardingView(),
-              SecondOnbordingView(),
-              ThirdOnboardingView(),
-            ],
+            children: onboardingList
           ),
           nikeLogo(),
           vectors(),
@@ -55,50 +50,17 @@ class _OnboardingBaseState extends State<OnboardingBase> {
             bottom: 80,
             left: 50,
             right: 50,
-            child: DotsIndicator(
-              dotsCount: onboardingList.length,
-              position: position,
-              decorator: DotsDecorator(
-                color: cLight,
-                activeColor: cIndicator,
-                size: const Size.square(9.0),
-                activeSize: const Size(50.0, 9.0),
-                activeShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-              ),
-            ),
+            child: dotsIndicator(),
           ),
           Positioned(
             top: 30,
-            child: TextButton(
-              onPressed: () {
-                _controller.previousPage(
-                    duration: const Duration(seconds: 1),
-                    curve: Curves.easeInOutCubicEmphasized);
-              },
-              child: const Text(
-                "Previous",
-                style: TextStyle(color: cLight),
-              ),
-            ),
+            child: previousButton(),
           ),
-
           Positioned(
             top: 30,
             right: 8,
-            child: TextButton(
-              onPressed: () {
-                _controller.animateToPage(2,
-                    duration: const Duration(seconds: 1),
-                    curve: Curves.easeInOut);
-              },
-              child: const Text(
-                "Skip",
-                style: TextStyle(color: cLight),
-              ),
-            ),
+            child: skipButton(),
           ),
-
           Positioned(
             bottom: 10,
             left: 20,
@@ -106,7 +68,7 @@ class _OnboardingBaseState extends State<OnboardingBase> {
             child: CustomButton(
               onTap: () {
                 isLast
-                    ? navigateToPR(SigninView(), context)
+                    ? navigateToPR(const SigninView(), context)
                     : _controller.nextPage(
                         duration: const Duration(seconds: 2),
                         curve: Curves.easeInOutCubicEmphasized);
@@ -117,6 +79,49 @@ class _OnboardingBaseState extends State<OnboardingBase> {
         ],
       ),
     );
+  }
+
+  TextButton previousButton() {
+    return TextButton(
+            onPressed: () {
+              _controller.previousPage(
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.easeInOutCubicEmphasized);
+            },
+            child: const Text(
+              "Previous",
+              style: TextStyle(color: cLight),
+            ),
+          );
+  }
+
+  TextButton skipButton() {
+    return TextButton(
+            onPressed: () {
+              _controller.animateToPage(2,
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.easeInOut);
+            },
+            child: const Text(
+              "Skip",
+              style: TextStyle(color: cLight),
+            ),
+          );
+  }
+
+  DotsIndicator dotsIndicator() {
+    return DotsIndicator(
+            dotsCount: onboardingList.length,
+            position: position,
+            decorator: DotsDecorator(
+              color: cLight,
+              activeColor: cIndicator,
+              size: const Size.square(9.0),
+              activeSize: const Size(50.0, 9.0),
+              activeShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0)),
+            ),
+          );
   }
 
   String _getButtonName() {

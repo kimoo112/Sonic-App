@@ -6,7 +6,7 @@ import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textfield.dart';
-import '../home_view.dart';
+import '../base_screen.dart';
 import 'signup_view.dart';
 
 class SigninView extends StatefulWidget {
@@ -64,7 +64,7 @@ class _SigninViewState extends State<SigninView> {
                           name: 'Sign In'.toUpperCase(),
                           onTap: () {
                             if (formKey.currentState!.validate()) {
-                              navigateToPR(const HomeView(), context);
+                              navigateToPR(const BaseView(), context);
                             } else {
                               autovalidateMode = AutovalidateMode.always;
                               setState(() {});
