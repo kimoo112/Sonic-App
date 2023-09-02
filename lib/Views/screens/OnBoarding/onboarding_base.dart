@@ -24,7 +24,7 @@ class _OnboardingBaseState extends State<OnboardingBase> {
     const SecondOnbordingView(),
     const ThirdOnboardingView(),
   ];
-  final  _controller= PageController();
+  final _controller = PageController();
   int position = 0;
 
   @override
@@ -34,15 +34,14 @@ class _OnboardingBaseState extends State<OnboardingBase> {
       body: Stack(
         children: [
           PageView(
-            onPageChanged: (indx) {
-              setState(() {
-                position = indx;
-                isLast = (indx == 2);
-              });
-            },
-            controller: _controller,
-            children: onboardingList
-          ),
+              onPageChanged: (indx) {
+                setState(() {
+                  position = indx;
+                  isLast = (indx == 2);
+                });
+              },
+              controller: _controller,
+              children: onboardingList),
           nikeLogo(),
           vectors(),
           // dot indicators
@@ -68,7 +67,7 @@ class _OnboardingBaseState extends State<OnboardingBase> {
             child: CustomButton(
               onTap: () {
                 isLast
-                    ? navigateToPR(const SigninView(), context)
+                    ? getOff(const SigninView(), context)
                     : _controller.nextPage(
                         duration: const Duration(seconds: 2),
                         curve: Curves.easeInOutCubicEmphasized);
@@ -83,45 +82,44 @@ class _OnboardingBaseState extends State<OnboardingBase> {
 
   TextButton previousButton() {
     return TextButton(
-            onPressed: () {
-              _controller.previousPage(
-                  duration: const Duration(seconds: 1),
-                  curve: Curves.easeInOutCubicEmphasized);
-            },
-            child: const Text(
-              "Previous",
-              style: TextStyle(color: cLight),
-            ),
-          );
+      onPressed: () {
+        _controller.previousPage(
+            duration: const Duration(seconds: 1),
+            curve: Curves.easeInOutCubicEmphasized);
+      },
+      child: const Text(
+        "Previous",
+        style: TextStyle(color: cLight),
+      ),
+    );
   }
 
   TextButton skipButton() {
     return TextButton(
-            onPressed: () {
-              _controller.animateToPage(2,
-                  duration: const Duration(seconds: 1),
-                  curve: Curves.easeInOut);
-            },
-            child: const Text(
-              "Skip",
-              style: TextStyle(color: cLight),
-            ),
-          );
+      onPressed: () {
+        _controller.animateToPage(2,
+            duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+      },
+      child: const Text(
+        "Skip",
+        style: TextStyle(color: cLight),
+      ),
+    );
   }
 
   DotsIndicator dotsIndicator() {
     return DotsIndicator(
-            dotsCount: onboardingList.length,
-            position: position,
-            decorator: DotsDecorator(
-              color: cLight,
-              activeColor: cIndicator,
-              size: const Size.square(9.0),
-              activeSize: const Size(50.0, 9.0),
-              activeShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0)),
-            ),
-          );
+      dotsCount: onboardingList.length,
+      position: position,
+      decorator: DotsDecorator(
+        color: cLight,
+        activeColor: cIndicator,
+        size: const Size.square(9.0),
+        activeSize: const Size(50.0, 9.0),
+        activeShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+      ),
+    );
   }
 
   String _getButtonName() {

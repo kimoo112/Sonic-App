@@ -24,7 +24,7 @@ class ArrivalsContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text('Summer Sale',
-                      style: TextStyle(fontWeight: FontWeight.w500)),
+                      style: TextStyle(fontWeight: FontWeight.w600)),
                   SizedBox(height: 5.h),
                   const Text('25% OFF',
                       style: TextStyle(

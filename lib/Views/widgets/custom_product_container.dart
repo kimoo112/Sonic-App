@@ -3,14 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:shoes_store/Helpers/colors.dart';
+import 'package:shoes_store/Model/popular_shoes_model.dart';
+
+import '../../Controller/cart_controller.dart';
+import '../../Controller/favorite_controller.dart';
 
 class CustomProductContainer extends StatefulWidget {
   final String model;
   final dynamic image;
   final int price;
+  final int index;
+
   const CustomProductContainer(
-      {Key? key, required this.model, required this.image, required this.price})
+      {Key? key,
+      required this.model,
+      required this.image,
+      required this.price,
+      required this.index})
       : super(key: key);
 
   @override
@@ -18,7 +29,9 @@ class CustomProductContainer extends StatefulWidget {
 }
 
 class _CustomProductContainerState extends State<CustomProductContainer> {
-  bool isFavorite = false;
+  CartController controller = Get.find();
+  FavoriteController favController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,26 +62,33 @@ class _CustomProductContainerState extends State<CustomProductContainer> {
                       style: const TextStyle(
                           color: cGrey, fontFamily: 'Poppins', fontSize: 16),
                     ),
-                     SizedBox(height:5.h),
+                    SizedBox(height: 5.h),
                     Text('\$ ${widget.price}',
                         style: const TextStyle(
-                            color: cDark,fontWeight: FontWeight.w600, fontFamily: 'Poppins', fontSize: 14)),
+                            color: cDark,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppins',
+                            fontSize: 14)),
                   ],
                 ),
               ),
             ],
           ),
-          IconButton(
-              onPressed: () {
-                setState(() {
-                  isFavorite = !isFavorite;
-                });
-              },
-              icon: isFavorite
-                  ? const Icon(IconlyBold.heart, color: cLightOrange)
-                  : const Icon(FontAwesomeIcons.heartCrack,
-                      // Iconsax.heart_add4,
-                      color: cBlue)),
+          Obx(
+            () => IconButton(
+                onPressed: () {
+                  favController.isFavorite(getPopularShoes[widget.index])
+                      ? favController
+                          .removeFromFavorite(getPopularShoes[widget.index])
+                      : favController
+                          .addToFavorite(getPopularShoes[widget.index]);
+                },
+                icon: favController.isFavorite(getPopularShoes[widget.index])
+                    ? const Icon(IconlyBold.heart, color: cLightOrange)
+                    : const Icon(FontAwesomeIcons.heartCrack,
+                        // Iconsax.heart_add4,
+                        color: cBlue)),
+          ),
           Positioned(
             bottom: 0,
             right: 0,
@@ -85,7 +105,9 @@ class _CustomProductContainerState extends State<CustomProductContainer> {
               alignment: Alignment.center,
               child: IconButton(
                 padding: EdgeInsets.zero,
-                onPressed: () {},
+                onPressed: () {
+                  controller.addToCart(getPopularShoes[widget.index]);
+                },
                 icon: const Icon(
                   CupertinoIcons.add,
                   color: cWhite,

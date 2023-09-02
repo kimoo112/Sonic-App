@@ -5,9 +5,11 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shoes_store/Helpers/colors.dart';
+import 'package:shoes_store/Helpers/navigate.dart';
 import 'package:shoes_store/Views/screens/OnBoarding/onbording_view.dart';
 import 'package:shoes_store/Views/screens/OnBoarding/second_onbording_view.dart';
 import 'package:shoes_store/Views/screens/OnBoarding/third_onboarding_view.dart';
+import 'package:shoes_store/Views/screens/cart_view.dart';
 import 'dart:async';
 
 import 'package:shoes_store/Views/screens/home_view.dart';
@@ -107,7 +109,9 @@ class _BaseViewState extends State<BaseView> with TickerProviderStateMixin {
     return Scaffold(
       extendBody: true,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          geTo( CartView(), context);
+        },
         shape: const CircleBorder(),
         backgroundColor: cBlue,
         child: Stack(

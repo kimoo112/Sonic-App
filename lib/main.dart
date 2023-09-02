@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:shoes_store/Helpers/Binding/binding.dart';
 import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Views/screens/base_screen.dart';
+import 'package:shoes_store/Views/screens/Splash/splash_view.dart';
 
 void main() {
   runApp(const Sonic());
@@ -27,16 +29,17 @@ class Sonic extends StatelessWidget {
         splitScreenMode: true,
         // Use builder only if you need to use library outside ScreenUtilInit context
         builder: (_, child) {
-          return MaterialApp(
+          return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Nike',
+            title: 'Sonic'.toUpperCase(),
             theme: ThemeData(
               scaffoldBackgroundColor: cLight,
               appBarTheme: const AppBarTheme(backgroundColor: cLight),
               fontFamily: 'Raleway',
               useMaterial3: true,
             ),
-            home: const BaseView(),
+            home: const SplashView(),
+            initialBinding: GetBingding(),
           );
         });
   }

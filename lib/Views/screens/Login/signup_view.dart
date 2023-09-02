@@ -59,8 +59,7 @@ class _SignupViewState extends State<SignupView> {
                                       name: 'Sign Up'.toUpperCase(),
                                       onTap: () {
                                         if (formKey.currentState!.validate()) {
-                                          navigateToPR(
-                                              const BaseView(), context);
+                                          getOff(const BaseView(), context);
                                         } else {
                                           autovalidateMode =
                                               AutovalidateMode.always;
@@ -101,7 +100,7 @@ class _SignupViewState extends State<SignupView> {
               const Text('Already Have Account?'),
               TextButton(
                 onPressed: () {
-                  navigateToPR(const SigninView(), context);
+                  getOff(const SigninView(), context);
                 },
                 style: TextButton.styleFrom(
                   padding:

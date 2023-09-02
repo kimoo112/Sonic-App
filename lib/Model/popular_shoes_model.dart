@@ -10,6 +10,12 @@ class PopularShoesModel {
 }
 
 List<PopularShoesModel> getPopularShoes = [
-  PopularShoesModel(image:Assets.imagesHomeShoes1 , model: 'Nike Jordan', price: 302),
-  PopularShoesModel(image:Assets.imagesHomeShoes2 , model: 'Nike Air Max', price: 750)
+  PopularShoesModel(
+      image: Assets.imagesHomeShoes1, model: 'Nike Jordan', price: 640),
+  PopularShoesModel(
+      image: Assets.imagesHomeShoes2, model: 'Nike Air Max', price: 750),
+  PopularShoesModel(
+      image: Assets.imagesHomeShoes3, model: 'Nike Club Max', price: 450),
+  PopularShoesModel(
+      image: Assets.imagesHomeShoes4, model: 'Nike Air Max', price: 500),
 ];

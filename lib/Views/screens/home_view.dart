@@ -44,9 +44,9 @@ class _HomeViewState extends State<HomeView>
         ),
         centerTitle: true,
         leading: leadingButton(),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 12.0),
+            padding: const EdgeInsets.only(right: 12.0),
             child: BadgeIcon(),
           )
         ],
