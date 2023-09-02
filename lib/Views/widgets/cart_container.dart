@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoes_store/Helpers/colors.dart';
+import '../../Helpers/colors.dart';
 
 class CartContainer extends StatelessWidget {
   const CartContainer(
@@ -13,7 +13,7 @@ class CartContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 335,
+      width: double.infinity,
       height: 104,
       margin: const EdgeInsets.all(12),
       padding: EdgeInsets.only(right: 40.sp),

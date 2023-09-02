@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_store/Model/popular_shoes_model.dart';
+import '../../Model/popular_shoes_model.dart';
 
 import 'custom_product_container.dart';
 

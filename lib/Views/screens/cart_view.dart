@@ -9,6 +9,7 @@ import 'package:shoes_store/Helpers/size.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../widgets/cart_container.dart';
+import '../widgets/get_back_arrow.dart';
 import '../widgets/total_cost.dart';
 
 class CartView extends StatelessWidget {
@@ -18,37 +19,28 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          scrolledUnderElevation: 2,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(
-              IconlyBroken.arrowLeft2,
-              color: cBackGround,
-            ),
-          ),
-          backgroundColor: cTransparent,
-          centerTitle: true,
-          title: const Text(
-            'My Cart',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-          ),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        scrolledUnderElevation: 2,
+        leading: const GetBackArrow(),
+        backgroundColor: cTransparent,
+        centerTitle: true,
+        title: const Text(
+          'My Cart',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
         ),
-        body: Obx(
-                      ()=>  Column(
-          children: [
-            SizedBox(
-              height: kHieght(context) * .7,
-              child:  ListView.builder(
-                  itemCount: controller.cartList.length,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Dismissible(
+      ),
+      body: Obx(() => Column(
+            children: [
+              SizedBox(
+                height: kHieght(context) * .7,
+                child: ListView.builder(
+                    itemCount: controller.cartList.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Dismissible(
                         crossAxisEndOffset: .8,
-                        key:  UniqueKey(),
+                        key: UniqueKey(),
                         secondaryBackground: Container(
                           width: 335,
                           height: 104,
@@ -61,10 +53,9 @@ class CartView extends StatelessWidget {
                             padding: EdgeInsets.only(right: 17.0),
                             child: Icon(CupertinoIcons.trash, color: cWhite),
                           ),
-                        ), 
+                        ),
                         background: Container(
                           width: 335,
-                          
                           height: 104,
                           margin: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
@@ -85,17 +76,17 @@ class CartView extends StatelessWidget {
                           image: controller.cartList[index].image,
                           name: controller.cartList[index].model,
                           price: controller.cartList[index].price,
-                                       onPressed: () {
-                         controller.deleteFromCart(controller.cartList[index]);
-                                       },
+                          onPressed: () {
+                            controller
+                                .deleteFromCart(controller.cartList[index]);
+                          },
                         ),
                       );
-                  }),
+                    }),
               ),
-            TotalCost(controller: controller),
-          ],
-        )
-            ),
-        );
+              TotalCost(controller: controller),
+            ],
+          )),
+    );
   }
 }

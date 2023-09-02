@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/size.dart';
+import '../../Helpers/size.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Helpers/colors.dart';
@@ -72,7 +72,7 @@ class TotalCost extends StatelessWidget {
                     'Total Cost',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
-                  Text('\$ ${controller.priceOfProducts} + Delivery',
+                  Text('\$ ${(controller.priceOfProducts.value + 60).toStringAsFixed(1)} ',
                       style: const TextStyle(
                           color: cBackGround,
                           fontFamily: 'Poppins',

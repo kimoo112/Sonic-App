@@ -28,7 +28,7 @@ class OnboardingView extends StatelessWidget {
                             color: cLight,
                             fontWeight: FontWeight.bold,
                             fontSize: 30)),
-                    const Text('Nike',
+                    const Text('Sonic',
                         style: TextStyle(
                             color: cLight,
                             fontWeight: FontWeight.bold,

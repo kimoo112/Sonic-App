@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/Binding/binding.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Views/screens/Splash/splash_view.dart';
+import 'Helpers/Binding/binding.dart';
+import 'Helpers/colors.dart';
+import 'Views/screens/Splash/splash_view.dart';
 
 void main() {
   runApp(const Sonic());

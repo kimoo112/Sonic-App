@@ -4,14 +4,14 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Views/screens/OnBoarding/second_onbording_view.dart';
-import 'package:shoes_store/Views/screens/OnBoarding/third_onboarding_view.dart';
-import 'package:shoes_store/Views/screens/cart_view.dart';
+import '../../Helpers/colors.dart';
+import '../../Helpers/navigate.dart';
+import 'OnBoarding/second_onbording_view.dart';
+import 'OnBoarding/third_onboarding_view.dart';
+import 'cart_view.dart';
 import 'dart:async';
 
-import 'package:shoes_store/Views/screens/home_view.dart';
+import 'home_view.dart';
 
 import 'favorite_view.dart';
 
@@ -159,7 +159,7 @@ class _BaseViewState extends State<BaseView> with TickerProviderStateMixin {
           offset: const Offset(0, 1),
           blurRadius: 12,
           spreadRadius: 0.5,
-          color: cGrey.withOpacity(.5),
+          color: cLightGrey.withOpacity(.4),
         ),
       ),
     );

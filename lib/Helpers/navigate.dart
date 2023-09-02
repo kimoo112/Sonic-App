@@ -8,7 +8,10 @@ void getOff(Widget, context) => Get.offAll(Widget,
     transition: Transition.fadeIn, duration: const Duration(seconds: 2));
 
 void getTo(Widget, context) => Get.to(Widget,
-    transition: Transition.fade, duration: const Duration(seconds: 1));
+    transition: Transition.fade, duration: const Duration(seconds: 2));
+
+void getToSearch(Widget, context) => Get.to(Widget,
+    transition: Transition.cupertino, duration: const Duration(seconds: 1));
 
 void navigateToPSearch(Widget, context) => Navigator.push(
       context,

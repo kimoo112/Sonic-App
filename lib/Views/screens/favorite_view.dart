@@ -1,11 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Controller/favorite_controller.dart';
-import 'package:shoes_store/Views/widgets/badge_icon.dart';
-import 'package:shoes_store/Views/widgets/favorite_container.dart';
-
+import '../../Controller/favorite_controller.dart';
+import '../widgets/badge_icon.dart';
+import '../widgets/favorite_container.dart';
 import '../../Helpers/colors.dart';
-import '../widgets/custom_product_container.dart';
 
 class FavoriteView extends StatelessWidget {
   FavoriteView({Key? key}) : super(key: key);

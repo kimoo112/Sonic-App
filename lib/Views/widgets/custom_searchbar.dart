@@ -1,6 +1,9 @@
-import 'package:shoes_store/Helpers/colors.dart';
+import '../../Helpers/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../Helpers/navigate.dart';
+import '../screens/search_view.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({
@@ -20,7 +23,7 @@ class CustomSearchBar extends StatelessWidget {
       child: TextField(
         onTap: onTap ??
             () {
-              // navigateToPSearch(const SearchView(), context);
+              getToSearch( SearchView(), context);
             },
         onChanged: onChanged ?? (value) {},
         style: const TextStyle(color: cDark),

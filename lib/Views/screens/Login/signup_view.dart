@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_store/Views/screens/base_screen.dart';
-import 'signin_view.dart';
-import '../../widgets/custom_textfield.dart';
 
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
 import '../../widgets/custom_button.dart';
+import '../../widgets/custom_textfield.dart';
+import '../base_screen.dart';
+import 'signin_view.dart';
 
 class SignupView extends StatefulWidget {
   const SignupView({Key? key}) : super(key: key);

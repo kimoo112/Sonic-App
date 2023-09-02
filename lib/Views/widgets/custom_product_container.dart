@@ -4,8 +4,8 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Model/popular_shoes_model.dart';
+import '../../Helpers/colors.dart';
+import '../../Model/popular_shoes_model.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Controller/favorite_controller.dart';

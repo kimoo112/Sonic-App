@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Views/screens/all_popular_shoes.dart';
-import 'package:shoes_store/Views/widgets/arrivals_container.dart';
-import 'package:shoes_store/Views/widgets/custom_searchbar.dart';
+import '../../Helpers/colors.dart';
+import 'all_popular_shoes.dart';
+import '../widgets/arrivals_container.dart';
+import '../widgets/custom_searchbar.dart';
 
 import '../../Helpers/images.dart';
 import '../../Helpers/navigate.dart';
@@ -47,8 +47,7 @@ class _HomeViewState extends State<HomeView>
         centerTitle: true,
         leading: leadingButton(),
         actions: [
-        
-        BadgeIcon(),
+          BadgeIcon(),
         ],
       ),
       body: Padding(
@@ -57,7 +56,7 @@ class _HomeViewState extends State<HomeView>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomSearchBar(),
+              const Hero(tag: 'null', child: CustomSearchBar()),
               SizedBox(height: 22.h),
               selectCategory(),
               SizedBox(height: 22.h),
@@ -65,7 +64,7 @@ class _HomeViewState extends State<HomeView>
                 child: TabBarWidget(tabController: _tabController),
               ),
               SizedBox(height: 11.h),
-               SeeAllRow(
+              SeeAllRow(
                 onPressed: () {
                   getTo(const AllPopular(), context);
                 },

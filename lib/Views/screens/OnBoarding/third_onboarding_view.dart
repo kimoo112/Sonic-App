@@ -20,9 +20,9 @@ class ThirdOnboardingView extends StatelessWidget {
               color: cLight, fontWeight: FontWeight.bold, fontSize: 35),
         ),
         const Text(
-          'Power To',
+          'Power',
           style: TextStyle(
-              color: cLight, fontWeight: FontWeight.bold, fontSize: 30),
+              color: cLight, fontWeight: FontWeight.bold, fontSize: 35),
         ),
         const SizedBox(height: 10),
         const Text(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Helpers/images.dart';
+import '../../Helpers/colors.dart';
+import '../../Helpers/images.dart';
 
 class ArrivalsContainer extends StatelessWidget {
   const ArrivalsContainer({Key? key}) : super(key: key);

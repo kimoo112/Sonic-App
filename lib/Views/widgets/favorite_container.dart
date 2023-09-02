@@ -2,10 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Model/popular_shoes_model.dart';
+import '../../Helpers/colors.dart';
+import '../../Model/popular_shoes_model.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Controller/favorite_controller.dart';
@@ -85,12 +84,12 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
               ),
             ],
           ),
-         IconButton(
-                onPressed: () {
-                  favController.removeFromFavorite(favController.favoriteList [widget.index]);
-                },
-                icon: const Icon(IconlyBold.heart, color: cLightOrange)
-                    ),
+          IconButton(
+              onPressed: () {
+                favController.removeFromFavorite(
+                    favController.favoriteList[widget.index]);
+              },
+              icon: const Icon(IconlyBold.heart, color: cLightOrange)),
           Positioned(
             top: 0,
             right: 0,

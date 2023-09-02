@@ -18,7 +18,7 @@ class SecondOnbordingView extends StatelessWidget {
               color: cLight, fontWeight: FontWeight.bold, fontSize: 30),
         ),
         const Text(
-          ' With Nike',
+          ' With Sonic',
           style: TextStyle(
               color: cLight, fontWeight: FontWeight.bold, fontSize: 30),
         ),
