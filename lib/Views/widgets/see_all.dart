@@ -5,9 +5,10 @@ import '../../Helpers/colors.dart';
 class SeeAllRow extends StatelessWidget {
   const SeeAllRow({
     super.key,
-    this.category = 'Popular Shoes',
+    this.category = 'Popular Shoes', this.onPressed,
   });
   final String category;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,7 +17,7 @@ class SeeAllRow extends StatelessWidget {
         Text(category,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
         TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           child: const Text(
             "See All",
             style: TextStyle(

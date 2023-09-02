@@ -10,5 +10,6 @@ const Color cLightGrey = Color(0xFF707B81);
 const Color cGrey = Color(0xFF6A6A6A);
 const Color cOrange = Color(0xFFFF4C24);
 const Color cLightOrange = Color(0xFFF87265);
+const Color cDismiss = Color(0xFFFF1900);
 const Color cIndicator= Color(0xFFFFB21A);
 const Color cSale= Color(0xFF674DC5);

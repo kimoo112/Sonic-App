@@ -6,13 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shoes_store/Helpers/colors.dart';
 import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Views/screens/OnBoarding/onbording_view.dart';
 import 'package:shoes_store/Views/screens/OnBoarding/second_onbording_view.dart';
 import 'package:shoes_store/Views/screens/OnBoarding/third_onboarding_view.dart';
 import 'package:shoes_store/Views/screens/cart_view.dart';
 import 'dart:async';
 
 import 'package:shoes_store/Views/screens/home_view.dart';
+
+import 'favorite_view.dart';
 
 class BaseView extends StatefulWidget {
   const BaseView({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class _BaseViewState extends State<BaseView> with TickerProviderStateMixin {
   ];
   List<Widget> pages = [
     const HomeView(),
-    const OnboardingView(),
+     FavoriteView(),
     const SecondOnbordingView(),
     const ThirdOnboardingView(),
   ];
@@ -110,7 +111,7 @@ class _BaseViewState extends State<BaseView> with TickerProviderStateMixin {
       extendBody: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          geTo( CartView(), context);
+          getTo(CartView(), context);
         },
         shape: const CircleBorder(),
         backgroundColor: cBlue,

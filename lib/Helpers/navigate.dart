@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 void getOff(Widget, context) => Get.offAll(Widget,
     transition: Transition.fadeIn, duration: const Duration(seconds: 2));
 
-void geTo(Widget, context) => Get.to(Widget,
+void getTo(Widget, context) => Get.to(Widget,
     transition: Transition.fade, duration: const Duration(seconds: 1));
 
 void navigateToPSearch(Widget, context) => Navigator.push(

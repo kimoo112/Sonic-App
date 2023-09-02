@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shoes_store/Helpers/colors.dart';
+import 'package:shoes_store/Views/screens/all_popular_shoes.dart';
 import 'package:shoes_store/Views/widgets/arrivals_container.dart';
 import 'package:shoes_store/Views/widgets/custom_searchbar.dart';
 
 import '../../Helpers/images.dart';
+import '../../Helpers/navigate.dart';
 import '../widgets/badge_icon.dart';
 import '../widgets/popular_list_view.dart';
 import '../widgets/see_all.dart';
@@ -45,10 +47,8 @@ class _HomeViewState extends State<HomeView>
         centerTitle: true,
         leading: leadingButton(),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12.0),
-            child: BadgeIcon(),
-          )
+        
+        BadgeIcon(),
         ],
       ),
       body: Padding(
@@ -65,7 +65,11 @@ class _HomeViewState extends State<HomeView>
                 child: TabBarWidget(tabController: _tabController),
               ),
               SizedBox(height: 11.h),
-              const SeeAllRow(),
+               SeeAllRow(
+                onPressed: () {
+                  getTo(const AllPopular(), context);
+                },
+              ),
               SizedBox(height: 11.h),
               const PopularListView(),
               const SeeAllRow(

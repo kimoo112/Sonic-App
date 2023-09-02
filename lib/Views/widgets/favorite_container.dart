@@ -10,13 +10,13 @@ import 'package:shoes_store/Model/popular_shoes_model.dart';
 import '../../Controller/cart_controller.dart';
 import '../../Controller/favorite_controller.dart';
 
-class CustomProductContainer extends StatefulWidget {
+class FavoriteContainer extends StatefulWidget {
   final String model;
   final dynamic image;
   final double price;
   final int index;
 
-  const CustomProductContainer(
+  const FavoriteContainer(
       {Key? key,
       required this.model,
       required this.image,
@@ -25,10 +25,10 @@ class CustomProductContainer extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<CustomProductContainer> createState() => _CustomProductContainerState();
+  State<FavoriteContainer> createState() => _FavoriteContainerState();
 }
 
-class _CustomProductContainerState extends State<CustomProductContainer> {
+class _FavoriteContainerState extends State<FavoriteContainer> {
   CartController controller = Get.find();
   FavoriteController favController = Get.find();
 
@@ -85,23 +85,14 @@ class _CustomProductContainerState extends State<CustomProductContainer> {
               ),
             ],
           ),
-          Obx(
-            () => IconButton(
+         IconButton(
                 onPressed: () {
-                  favController.isFavorite(getPopularShoes[widget.index])
-                      ? favController
-                          .removeFromFavorite(getPopularShoes[widget.index])
-                      : favController
-                          .addToFavorite(getPopularShoes[widget.index]);
+                  favController.removeFromFavorite(favController.favoriteList [widget.index]);
                 },
-                icon: favController.isFavorite(getPopularShoes[widget.index])
-                    ? const Icon(IconlyBold.heart, color: cLightOrange)
-                    : const Icon(FontAwesomeIcons.heartCrack,
-                        // Iconsax.heart_add4,
-                        color: cBlue)),
-          ),
+                icon: const Icon(IconlyBold.heart, color: cLightOrange)
+                    ),
           Positioned(
-            bottom: 0,
+            top: 0,
             right: 0,
             width: 34.w,
             height: 35.5.h,
@@ -109,9 +100,8 @@ class _CustomProductContainerState extends State<CustomProductContainer> {
               decoration: BoxDecoration(
                   color: cBlue,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12.r),
-                    bottomLeft: const Radius.circular(0),
-                    bottomRight: Radius.circular(16.r),
+                    bottomLeft: Radius.circular(12.r),
+                    topRight: Radius.circular(16.r),
                   )),
               alignment: Alignment.center,
               child: IconButton(

@@ -29,6 +29,14 @@ class Assets {
   /// assets/images/homeShoes4.png
   static const String imagesHomeShoes4 = "assets/images/homeShoes4.png";
 
+  /// Assets for imagesHomeShoes5
+  /// assets/images/homeShoes5.png
+  static const String imagesHomeShoes5 = "assets/images/homeShoes5.png";
+
+  /// Assets for imagesHomeShoes6
+  /// assets/images/homeShoes6.png
+  static const String imagesHomeShoes6 = "assets/images/homeShoes6.png";
+
   /// Assets for imagesLegWIthShoes
   /// assets/images/LegWIthShoes.png
   static const String imagesLegWIthShoes = "assets/images/LegWIthShoes.png";
