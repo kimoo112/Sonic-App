@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:shoes_store/Helpers/images.dart';
+import 'package:shoes_store/Helpers/size.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Controller/favorite_controller.dart';
 import '../../Helpers/colors.dart';
-import '../../Model/popular_shoes_model.dart';
+import '../widgets/add_to_cart_button.dart';
 import '../widgets/badge_icon.dart';
 import '../widgets/favorite_button.dart';
 import '../widgets/get_back_arrow.dart';
@@ -37,14 +37,7 @@ class DetailsView extends StatelessWidget {
           scrolledUnderElevation: 2,
           backgroundColor: cTransparent,
           centerTitle: true,
-          title: const Text(
-            'Spotlight',
-            style: TextStyle(
-                letterSpacing: 1,
-                color: cDark,
-                fontSize: 20,
-                fontWeight: FontWeight.w600),
-          ),
+          title: screenTitle(),
           actions: [
             BadgeIcon(
               icColor: cBackGround,
@@ -64,77 +57,74 @@ class DetailsView extends StatelessWidget {
                   children: [
                     ProductInfo(model: model, price: price),
                     SizedBox(
-                        width: 350,
-                        child: Image.asset(
-                          image,
-                          fit: BoxFit.fill,
-                        )),
-                    SizedBox(
                       height: 30.h,
                     ),
-                    theDescription()
                   ],
                 ),
-                theStand(),
+                theStand(context),
                 Positioned(
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    child:   Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.circle, color: cWhite),
-                            child: FavoriteButton(
-                                favController: favController, index: index)),
-                       InkWell(
-                            borderRadius: BorderRadius.circular(12),
-                            onTap: () {
-                              controller.addToCart(
-                                  getPopularShoes[index], context);
-                            },
-                            child: Container(
-                              width: 208.w,
-                              height: 50.h,
-                              decoration: BoxDecoration(
-                                  color: cBackGround,
-                                  borderRadius: BorderRadius.circular(12)),
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 40.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Icon(
-                                      Iconsax.bag_24,
-                                      color: cWhite,
-                                    ),
-                                    Text(
-                                      'Add to Cart',
-                                      style: TextStyle(color: cWhite),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
+                        favoriteButton(),
+                        AddToCartButton(controller: controller, index: index),
                       ],
                     )),
-
+                productImage(context),
+                Positioned(
+            bottom: kWidth(context) / 1.5,
+                    right: 0,
+                    left: 0,
+                    child: theDescription()),
               ],
             ),
           ),
         ));
   }
 
-  Positioned theStand() {
+  Text screenTitle() {
+    return const Text(
+      'Spotlight',
+      style: TextStyle(
+          letterSpacing: 1,
+          color: cDark,
+          fontSize: 20,
+          fontWeight: FontWeight.w600),
+    );
+  }
+
+  Positioned productImage(BuildContext context) {
     return Positioned(
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        child: Image.asset(Assets.imagesStand));
+      bottom: kWidth(context) / 1.2,
+      right: 0.h,
+      left: 0.h,
+      child: SizedBox(
+          width: 350,
+          child: Image.asset(
+            image,
+            fit: BoxFit.fill,
+          )),
+    );
+  }
+
+  Container favoriteButton() {
+    return Container(
+        decoration: const BoxDecoration(shape: BoxShape.circle, color: cWhite),
+        child: FavoriteButton(favController: favController, index: index));
+  }
+
+  Positioned theStand(context) {
+    return Positioned(
+        top: 0.h,
+        bottom: kWidth(context) / 8.h,
+        right: 0.h,
+        left: 0.h,
+        child: Image.asset(
+          Assets.imagesStand,
+        ));
   }
 
   Row theDescription() {
@@ -143,8 +133,8 @@ class DetailsView extends StatelessWidget {
         Flexible(
             child: Text(
           description,
-          style: const TextStyle(
-              color: cGrey, fontWeight: FontWeight.w500, fontSize: 16),
+          style:  TextStyle(
+              color: cGrey, fontWeight: FontWeight.w500, fontSize: 16.sp),
           textAlign: TextAlign.justify,
         )),
       ],
