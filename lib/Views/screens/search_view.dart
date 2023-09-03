@@ -58,6 +58,7 @@ class _SearchViewState extends State<SearchView> {
                 ),
               ),
             ),
+            isEmpty? Image.asset(name):
              Expanded(
                 child: PopularShoesGridView(
               getPopularShoes:searchedList,
