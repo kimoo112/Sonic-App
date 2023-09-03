@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../Helpers/colors.dart';
 
 import '../../../Helpers/images.dart';
@@ -14,24 +15,19 @@ class ThirdOnboardingView extends StatelessWidget {
       children: [
         const SizedBox(height: 20),
         Image.asset(Assets.imagesShoes3),
-        const Text(
-          'You Have the',
+        Text(
+          'Step into Sonic',
           style: TextStyle(
-              color: cLight, fontWeight: FontWeight.bold, fontSize: 35),
-        ),
-        const Text(
-          'Power',
+              color: cLight, fontWeight: FontWeight.bold, fontSize: 35.sp),
+       textAlign: TextAlign.center, ),
+        SizedBox(height: 10.h),
+        Text(
+          'Discover footwear that matches your pace. Ready, set, shop',
           style: TextStyle(
-              color: cLight, fontWeight: FontWeight.bold, fontSize: 35),
-        ),
-        const SizedBox(height: 10),
-        const Text(
-          'There Are Many Beautiful And Attractive Plants To Your Room',
-          style: TextStyle(
-              color: cLight, fontWeight: FontWeight.w200, fontSize: 16),
+              color: cLight, fontWeight: FontWeight.w200, fontSize: 16.sp),
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: 20.h),
       ],
     );
   }

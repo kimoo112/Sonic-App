@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
@@ -7,8 +8,8 @@ import '../../../Helpers/size.dart';
 import '../../widgets/custom_button.dart';
 import '../Login/signin_view.dart';
 
-class OnboardingView extends StatelessWidget {
-  const OnboardingView({Key? key}) : super(key: key);
+class FirstOnboardingView extends StatelessWidget {
+  const FirstOnboardingView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +24,16 @@ class OnboardingView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text('Welcome To',
+                    Text('Welcome To',
                         style: TextStyle(
                             color: cLight,
                             fontWeight: FontWeight.bold,
-                            fontSize: 30)),
-                    const Text('Sonic',
+                            fontSize: 30.sp)),
+                    Text('Sonic',
                         style: TextStyle(
                             color: cLight,
                             fontWeight: FontWeight.bold,
-                            fontSize: 28)),
+                            fontSize: 28.sp)),
                     const SizedBox(height: 10),
                     Image.asset(Assets.vectorsUnderLineVector),
                   ],
@@ -41,7 +42,7 @@ class OnboardingView extends StatelessWidget {
             ),
             Positioned(
               right: 0,
-              bottom: kWidth(context) * .6,
+              bottom: kWidth(context) /2.5,
               child: Image.asset(
                 Assets.imagesLegWIthShoes,
                 fit: BoxFit.cover,

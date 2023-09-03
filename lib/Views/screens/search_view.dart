@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shoes_store/Model/popular_shoes_model.dart';
 import 'package:shoes_store/Views/widgets/badge_icon.dart';
 import 'package:shoes_store/Views/widgets/custom_searchbar.dart';
 import 'package:shoes_store/Views/widgets/get_back_arrow.dart';
 
 import '../../Helpers/colors.dart';
+import '../../Helpers/images.dart';
 import '../widgets/popular_grid_view.dart';
 
 class SearchView extends StatefulWidget {
@@ -32,6 +34,7 @@ class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isEmpty ?cDark :cLight ,
       appBar: AppBar(
         scrolledUnderElevation: 0,
         backgroundColor: cTransparent,
@@ -39,7 +42,8 @@ class _SearchViewState extends State<SearchView> {
         actions: [
           BadgeIcon(
             icColor: cBackGround,
-            badgeColor: cDark,
+            badgeColor: isEmpty ?cLight :cDark,
+            contentColor: isEmpty ?cDark :cLight ,
           )
         ],
       ),
@@ -58,7 +62,7 @@ class _SearchViewState extends State<SearchView> {
                 ),
               ),
             ),
-            isEmpty? Image.asset(name):
+            isEmpty? Lottie.asset(Assets.imagesEmptyLottie,animate: true):
              Expanded(
                 child: PopularShoesGridView(
               getPopularShoes:searchedList,

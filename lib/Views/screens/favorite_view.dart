@@ -13,13 +13,14 @@ class FavoriteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         scrolledUnderElevation: 2,
         backgroundColor: cTransparent,
         centerTitle: true,
         title: const Text(
           'My Favourite',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+          style: TextStyle(color: cBackGround,fontSize: 20, fontWeight: FontWeight.w600),
         ),
         actions: [
           BadgeIcon(

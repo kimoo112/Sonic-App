@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 
@@ -7,26 +8,27 @@ class SecondOnbordingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(Assets.imagesShoes2,fit: BoxFit.cover,),
-        const Text(
-          'Let’s Start Journey',
-          style: TextStyle(
-              color: cLight, fontWeight: FontWeight.bold, fontSize: 30),
+        Image.asset(
+          Assets.imagesShoes2,
+          fit: BoxFit.cover,
         ),
-        const Text(
-          ' With Sonic',
+         SizedBox(height: 10.h),
+        Text(
+          "Discover Ultimate Sonic Elegance!",
           style: TextStyle(
-              color: cLight, fontWeight: FontWeight.bold, fontSize: 30),
-        ),
-        const SizedBox(height: 10),
-        const Text(
-          'Smart, Gorgeous & Fashionable Collection Explor Now',
+              color: cLight, fontWeight: FontWeight.bold, fontSize: 28.sp),
+      
+      textAlign: TextAlign.center,  ),
+       
+         SizedBox(height: 10.h),
+        Text(
+          'Where fashion meets the art of footwear.',
           style: TextStyle(
-              color: cLight, fontWeight: FontWeight.w200, fontSize: 18),
+              color: cLight, fontWeight: FontWeight.w200, fontSize: 18.sp),
           textAlign: TextAlign.center,
         )
       ],

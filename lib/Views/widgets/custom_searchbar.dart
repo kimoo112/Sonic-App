@@ -23,14 +23,13 @@ class CustomSearchBar extends StatelessWidget {
       child: TextField(
         onTap: onTap ??
             () {
-              getToSearch( SearchView(), context);
+              getToSearch(const SearchView(), context);
             },
         onChanged: onChanged ?? (value) {},
         style: const TextStyle(color: cDark),
         cursorColor: cBlue,
         decoration: InputDecoration(
-          prefixIcon:
-              const Icon(
+          prefixIcon: const Icon(
             CupertinoIcons.search,
             color: cBlue,
           ),

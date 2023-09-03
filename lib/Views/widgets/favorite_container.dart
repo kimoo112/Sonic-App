@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -28,6 +30,17 @@ class FavoriteContainer extends StatefulWidget {
 }
 
 class _FavoriteContainerState extends State<FavoriteContainer> {
+  List<Color> colorList = [
+    cBackGround,
+    cDark,
+    cIndicator,
+    cRed,
+    cDismiss,
+    cGreen,
+    cSoSad,
+    cSale,
+    cGrey
+  ];
   CartController controller = Get.find();
   FavoriteController favController = Get.find();
 
@@ -58,7 +71,7 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 12.0),
+                padding: const EdgeInsets.only(left: 12.0, right: 12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -73,12 +86,23 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
                           color: cGrey, fontFamily: 'Poppins', fontSize: 16),
                     ),
                     SizedBox(height: 5.h),
-                    Text('\$ ${widget.price}',
-                        style: const TextStyle(
-                            color: cDark,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Poppins',
-                            fontSize: 14)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('\$ ${widget.price}',
+                            style: const TextStyle(
+                                color: cDark,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Poppins',
+                                fontSize: 14)),
+                        Row(
+                          children: [
+                            colorContainer(),
+                            colorContainer(),
+                          ],
+                        )
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -106,7 +130,7 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
               child: IconButton(
                 padding: EdgeInsets.zero,
                 onPressed: () {
-                  controller.addToCart(getPopularShoes[widget.index]);
+                  controller.addToCart(getPopularShoes[widget.index],context);
                 },
                 icon: const Icon(
                   CupertinoIcons.add,
@@ -117,6 +141,18 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
           ),
         ],
       ),
+    );
+  }
+
+  Container colorContainer() {
+    return Container(
+      margin: const EdgeInsets.all(5),
+      width: 15,
+      height: 15,
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(color: cLight),
+          color: colorList[Random().nextInt(colorList.length)]),
     );
   }
 }

@@ -25,7 +25,7 @@ class _HomeViewState extends State<HomeView>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -40,14 +40,17 @@ class _HomeViewState extends State<HomeView>
       appBar: AppBar(
         backgroundColor: cTransparent,
         scrolledUnderElevation: 0,
-        title: const Text(
+        title: Text(
           'Explore',
-          style: TextStyle(fontWeight: FontWeight.w600),
+          style: TextStyle(
+              color: cBackGround, fontSize: 24.sp, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
         leading: leadingButton(),
         actions: [
-          BadgeIcon(),
+          BadgeIcon(
+            onTap: () {},
+          ),
         ],
       ),
       body: Padding(

@@ -13,6 +13,9 @@ dependencies:
   badges: ^3.1.2
   cupertino_icons: ^1.0.2
   dots_indicator: ^3.0.0
+  firebase_auth: ^4.8.0
+  firebase_core: ^2.15.1
+  firebase_core_desktop: ^1.0.2
   flutter:
     sdk: flutter
   flutter_iconly: ^1.0.2
@@ -22,6 +25,7 @@ dependencies:
   get: ^4.6.5
   get_storage: ^2.1.1
   iconsax: ^0.0.8
+  lottie: ^2.6.0
   smooth_page_indicator: ^1.1.0
 
 dev_dependencies:

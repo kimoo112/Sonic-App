@@ -10,12 +10,15 @@ class TotalCost extends StatelessWidget {
   const TotalCost({
     super.key,
     required this.controller,
+    required this.isEmpty,
   });
 
   final CartController controller;
+  final bool isEmpty;
 
   @override
   Widget build(BuildContext context) {
+    bool isEmpty = controller.cartList.isEmpty;
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
@@ -46,16 +49,16 @@ class TotalCost extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10.h),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Delivery',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    '\$ 60.20',
-                    style: TextStyle(fontFamily: 'Poppins'),
+                    isEmpty ? '\$ 0.0' : '\$ 60.20',
+                    style: const TextStyle(fontFamily: 'Poppins'),
                   ),
                 ],
               ),
@@ -72,7 +75,10 @@ class TotalCost extends StatelessWidget {
                     'Total Cost',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
-                  Text('\$ ${(controller.priceOfProducts.value + 60).toStringAsFixed(1)} ',
+                  Text(
+                      isEmpty
+                          ? '\$ ${(controller.priceOfProducts.value).toStringAsFixed(1)} '
+                          : '\$ ${(controller.priceOfProducts.value + 60.20).toStringAsFixed(1)} ',
                       style: const TextStyle(
                           color: cBackGround,
                           fontFamily: 'Poppins',

@@ -8,7 +8,7 @@ import '../../widgets/vectors.dart';
 
 import '../../../Helpers/navigate.dart';
 import '../Login/signin_view.dart';
-import 'onbording_view.dart';
+import 'first_onbording_view.dart';
 
 class OnboardingBase extends StatefulWidget {
   const OnboardingBase({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class OnboardingBase extends StatefulWidget {
 class _OnboardingBaseState extends State<OnboardingBase> {
   bool isLast = false;
   List<Widget> onboardingList = [
-    const OnboardingView(),
+    const FirstOnboardingView(),
     const SecondOnbordingView(),
     const ThirdOnboardingView(),
   ];

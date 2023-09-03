@@ -20,7 +20,7 @@ class PopularListView extends StatelessWidget {
           return CustomProductContainer(
             image: getPopularShoes[index].image,
             model: getPopularShoes[index].model,
-            price: getPopularShoes[index].price, index: index,
+            price: getPopularShoes[index].price, index: index, description: getPopularShoes[index].description,
           );
         },
       ),

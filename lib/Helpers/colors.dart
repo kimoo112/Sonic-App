@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color cLight = Color(0xFFF7F7F9);
+const Color cGreen = Color(0xFF19B404);
 const Color cDark = Color(0xFF2B2B2B);
 const Color cWhite = Color(0xFFFFFFFF);
 const Color cTransparent = Colors.transparent;
@@ -13,3 +14,6 @@ const Color cLightOrange = Color(0xFFF87265);
 const Color cDismiss = Color(0xFFFF1900);
 const Color cIndicator= Color(0xFFFFB21A);
 const Color cSale= Color(0xFF674DC5);
+const Color cNavy= Color(0xFF0B2F8B);
+const Color cSoSad = Color(0xff990000);
+const Color cRed= Color(0xFFCB1D1D);

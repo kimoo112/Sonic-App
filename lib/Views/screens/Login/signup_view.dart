@@ -5,7 +5,7 @@ import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textfield.dart';
-import '../base_screen.dart';
+import '../Base/base_screen.dart';
 import 'signin_view.dart';
 
 class SignupView extends StatefulWidget {

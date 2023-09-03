@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../Model/popular_shoes_model.dart';
 import 'custom_product_container.dart';
 
 class PopularShoesGridView extends StatelessWidget {
   const PopularShoesGridView({
-    super.key, required this.getPopularShoes,
+    super.key,
+    required this.getPopularShoes,
   });
   final List getPopularShoes;
   @override
@@ -24,7 +24,7 @@ class PopularShoesGridView extends StatelessWidget {
               model: getPopularShoes[index].model,
               image: getPopularShoes[index].image,
               price: getPopularShoes[index].price,
-              index: index);
+              index: index, description:getPopularShoes[index].description  ,);
         });
   }
 }
