@@ -26,6 +26,7 @@ class _HomeViewState extends State<HomeView>
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
+    
   }
 
   @override
@@ -36,6 +37,8 @@ class _HomeViewState extends State<HomeView>
 
   @override
   Widget build(BuildContext context) {
+  
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: cTransparent,
@@ -86,7 +89,10 @@ class _HomeViewState extends State<HomeView>
       ),
     );
   }
-
+//todo save the favorite bool in get storage 
+//todo see seyam store pageview to know why isnt scroll 
+//todo check out screen view 
+//todo image Picker 
   InkWell leadingButton() {
     return InkWell(
         borderRadius: BorderRadius.circular(33),

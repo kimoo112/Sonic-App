@@ -21,6 +21,14 @@ class Assets {
   /// assets/images/EmptyCartLottie.json
   static const String imagesEmptyCartLottie = "assets/images/EmptyCartLottie.json";
 
+  /// Assets for imagesEmptyFavorite
+  /// assets/images/EmptyFavorite.svg
+  static const String imagesEmptyFavorite = "assets/images/EmptyFavorite.svg";
+
+  /// Assets for imagesEmptyFavoriteLottie
+  /// assets/images/EmptyFavoriteLottie.json
+  static const String imagesEmptyFavoriteLottie = "assets/images/EmptyFavoriteLottie.json";
+
   /// Assets for imagesEmptyLottie
   /// assets/images/EmptyLottie.json
   static const String imagesEmptyLottie = "assets/images/EmptyLottie.json";

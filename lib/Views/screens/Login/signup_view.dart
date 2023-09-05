@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../Controller/google_auth_controller.dart';
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
@@ -19,6 +21,7 @@ class _SignupViewState extends State<SignupView> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  GoogleAuthController controller = Get.find();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isVisible = true;
@@ -55,29 +58,9 @@ class _SignupViewState extends State<SignupView> {
                                 padding: const EdgeInsets.all(12.0),
                                 child: Column(
                                   children: [
-                                    CustomButton(
-                                      name: 'Sign Up'.toUpperCase(),
-                                      onTap: () {
-                                        if (formKey.currentState!.validate()) {
-                                          getOff(const BaseView(), context);
-                                        } else {
-                                          autovalidateMode =
-                                              AutovalidateMode.always;
-                                          setState(() {});
-                                        }
-                                      },
-                                      nameColor: cLight,
-                                      color: cBlue.withOpacity(.95),
-                                    ),
+                                    signUpButton(context),
                                     const SizedBox(height: 22),
-                                    CustomButton(
-                                      name:
-                                          'Sign In with Google '.toUpperCase(),
-                                      onTap: () {},
-                                      nameColor: cDark,
-                                      icon: Image.asset(Assets.iconsGoogleIcon),
-                                      color: cLightGrey.withOpacity(.3),
-                                    ),
+                                    googleSignUpButton(),
                                   ],
                                 ))
                           ],
@@ -87,6 +70,36 @@ class _SignupViewState extends State<SignupView> {
                     alreadyHaveAccount(context)
                   ],
                 ))));
+  }
+
+  CustomButton googleSignUpButton() {
+    return CustomButton(
+                                    name:
+                                        'Sign In with Google '.toUpperCase(),
+                                    onTap: () {
+                                      controller.signInWithGoogle();
+                                    },
+                                    nameColor: cDark,
+                                    icon: Image.asset(Assets.iconsGoogleIcon),
+                                    color: cLightGrey.withOpacity(.3),
+                                  );
+  }
+
+  CustomButton signUpButton(BuildContext context) {
+    return CustomButton(
+                                    name: 'Sign Up'.toUpperCase(),
+                                    onTap: () {
+                                      if (formKey.currentState!.validate()) {
+                                        getOff(const BaseView(), context);
+                                      } else {
+                                        autovalidateMode =
+                                            AutovalidateMode.always;
+                                        setState(() {});
+                                      }
+                                    },
+                                    nameColor: cLight,
+                                    color: cBlue.withOpacity(.95),
+                                  );
   }
 
   Align alreadyHaveAccount(BuildContext context) {

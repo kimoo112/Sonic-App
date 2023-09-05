@@ -2,24 +2,61 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shoes_store/Helpers/colors.dart';
+import 'package:shoes_store/Helpers/get_storage.dart';
 
 import '../Model/popular_shoes_model.dart';
 
 class FavoriteController extends GetxController {
   RxList favoriteList = [].obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    loadFavorites();
+    print('isFavorreatyye ${favoriteList.length}');
+  }
+
   bool isFavorite(PopularShoesModel product) {
     return favoriteList.contains(product);
   }
 
+  saveFavorite(PopularShoesModel product) {
+    bool  isFavoritee = favoriteList.contains(product);
+    storage.write('favorite_${product.id}', isFavoritee);
+    // isFavoritee.value = favoriteList.contains(product);
+    // storage.write('favorite_${product.id}', isFavoritee);
+    // print('isFavore ${favoriteList.length}');
+  }
+
+  void loadFavorites() {
+    
+    for (var product in getPopularShoes) {
+      // Assuming getPopularShoes is your list of all products
+      bool? status = storage.read('favorite_${product.id}');
+      if (status == true) {
+        favoriteList.add(product);
+      }
+    }
+  }
+
+  bool isEmpty() {
+    return favoriteList.isEmpty;
+  }
+
   addToFavorite(PopularShoesModel product) {
     favoriteList.add(product);
+    
+
+    saveFavorite(product);
     showAddedElegantSnackBar();
   }
 
   removeFromFavorite(PopularShoesModel product) {
-    favoriteList.remove(product);
+      favoriteList.remove(product);
+      saveFavorite(product);
     showDeletedElegantSnackBar();
+
+      // Optionally, you can show a snackbar or other UI feedback here.
   }
 }
 

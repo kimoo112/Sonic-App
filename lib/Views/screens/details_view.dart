@@ -12,6 +12,7 @@ import '../widgets/badge_icon.dart';
 import '../widgets/favorite_button.dart';
 import '../widgets/get_back_arrow.dart';
 import '../widgets/porduct_info.dart';
+import '../widgets/random_list_view.dart';
 
 // ignore: must_be_immutable
 class DetailsView extends StatelessWidget {
@@ -54,8 +55,12 @@ class DetailsView extends StatelessWidget {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ProductInfo(model: model, price: price),
+                    const Column(
+                      children: [],
+                    ),
                     SizedBox(
                       height: 30.h,
                     ),
@@ -75,10 +80,16 @@ class DetailsView extends StatelessWidget {
                     )),
                 productImage(context),
                 Positioned(
-            bottom: kWidth(context) / 1.5,
+                    bottom: kWidth(context) /3,
                     right: 0,
                     left: 0,
                     child: theDescription()),
+                Positioned(
+                  bottom: kWidth(context) / 1.9,
+                  right: 0,
+                  left: 0,
+                  child: RandomListView(),
+                ),
               ],
             ),
           ),
@@ -133,7 +144,7 @@ class DetailsView extends StatelessWidget {
         Flexible(
             child: Text(
           description,
-          style:  TextStyle(
+          style: TextStyle(
               color: cGrey, fontWeight: FontWeight.w500, fontSize: 16.sp),
           textAlign: TextAlign.justify,
         )),

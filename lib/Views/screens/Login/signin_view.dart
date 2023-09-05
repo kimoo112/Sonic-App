@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
+import '../../../Controller/google_auth_controller.dart';
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
@@ -17,6 +19,7 @@ class SigninView extends StatefulWidget {
 }
 
 class _SigninViewState extends State<SigninView> {
+  GoogleAuthController controller = Get.find();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
@@ -73,10 +76,12 @@ class _SigninViewState extends State<SigninView> {
                           nameColor: cLight,
                           color: cBlue.withOpacity(.95),
                         ),
-                        SizedBox(height: 22.h),
+                        SizedBox(height: 11.h),
                         CustomButton(
                           name: 'Sign In with Google '.toUpperCase(),
-                          onTap: () {},
+                          onTap: () {
+                            controller.signInWithGoogle();
+                          },
                           nameColor: cDark,
                           icon: Image.asset(Assets.iconsGoogleIcon),
                           color: cLightGrey.withOpacity(.3),
