@@ -3,10 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shoes_store/Helpers/colors.dart';
+import 'package:shoes_store/Views/screens/Base/base_screen.dart';
+
+import '../Helpers/colors.dart';
+import '../Helpers/navigate.dart';
+import '../Views/screens/Login/signin_view.dart';
+import 'cart_controller.dart';
 
 class GoogleAuthController extends GetxController {
-  Future signInWithGoogle() async {
+  CartController controller = Get.find();
+
+  Future signInWithGoogle(context) async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     if (googleUser == null) {
       return showGoogleUserNullSnackBar();
@@ -18,8 +25,16 @@ class GoogleAuthController extends GetxController {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
+    await FirebaseAuth.instance.signInWithCredential(credential);
+    return getOff(const BaseView(), context);
+  }
 
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+  logOut(context) async {
+    GoogleSignIn().disconnect();
+    await FirebaseAuth.instance.signOut();
+    controller.deleteAllCart();
+    // ignore: use_build_context_synchronously
+    getOff(const SigninView(), context);
   }
 }
 
@@ -43,7 +58,7 @@ void showGoogleUserNullSnackBar() {
         fontSize: 15,
       ),
     ),
-    backgroundColor:cSoSad, // Red for alert
+    backgroundColor: cSoSad, // Red for alert
     borderRadius: 20,
     margin: const EdgeInsets.all(15),
     duration: const Duration(seconds: 4),

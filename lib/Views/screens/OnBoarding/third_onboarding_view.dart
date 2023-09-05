@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../Helpers/colors.dart';
 
+import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 
 class ThirdOnboardingView extends StatelessWidget {

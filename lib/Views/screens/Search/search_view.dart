@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:shoes_store/Model/popular_shoes_model.dart';
-import 'package:shoes_store/Views/widgets/badge_icon.dart';
-import 'package:shoes_store/Views/widgets/custom_searchbar.dart';
-import 'package:shoes_store/Views/widgets/get_back_arrow.dart';
+import '../../../Model/popular_shoes_model.dart';
+import '../../widgets/badge_icon.dart';
+import '../../widgets/custom_searchbar.dart';
+import '../../widgets/get_back_arrow.dart';
 
-import '../../Helpers/colors.dart';
-import '../../Helpers/images.dart';
-import '../widgets/popular_grid_view.dart';
+import '../../../Helpers/colors.dart';
+import '../../../Helpers/images.dart';
+import '../../widgets/popular_grid_view.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({Key? key}) : super(key: key);

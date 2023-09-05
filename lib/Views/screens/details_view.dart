@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/images.dart';
-import 'package:shoes_store/Helpers/size.dart';
+import '../../Helpers/images.dart';
+import '../../Helpers/size.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Controller/favorite_controller.dart';
@@ -80,7 +80,7 @@ class DetailsView extends StatelessWidget {
                     )),
                 productImage(context),
                 Positioned(
-                    bottom: kWidth(context) /3,
+                    bottom: kWidth(context) / 3,
                     right: 0,
                     left: 0,
                     child: theDescription()),
@@ -88,7 +88,7 @@ class DetailsView extends StatelessWidget {
                   bottom: kWidth(context) / 1.9,
                   right: 0,
                   left: 0,
-                  child: RandomListView(),
+                  child: const RandomListView(),
                 ),
               ],
             ),

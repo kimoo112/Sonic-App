@@ -1,8 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shoes_store/Helpers/size.dart';
-import 'package:shoes_store/Views/screens/Base/base_screen.dart';
+import '../Base/base_screen.dart';
 import '../../../Helpers/colors.dart';
 import 'second_onbording_view.dart';
 import 'third_onboarding_view.dart';
@@ -45,7 +44,7 @@ class _OnboardingBaseState extends State<OnboardingBase> {
               },
               controller: _controller,
               children: onboardingList),
-      
+
           // dot indicators
           Positioned(
             bottom: 80,
@@ -62,16 +61,18 @@ class _OnboardingBaseState extends State<OnboardingBase> {
             right: 8,
             child: skipButton(),
           ),
-              Positioned(
-          right: 0,
-          left: 0,
-          top:0,
-          bottom: 0,
-                child: IgnorePointer(child: nikeLogo())),
           Positioned(
-            top: 0, bottom: 30, right: 0, 
-            left: 0,
-            child: IgnorePointer(child: vectors())),
+              right: 0,
+              left: 0,
+              top: 0,
+              bottom: 0,
+              child: IgnorePointer(child: nikeLogo())),
+          Positioned(
+              top: 0,
+              bottom: 30,
+              right: 0,
+              left: 0,
+              child: IgnorePointer(child: vectors())),
           Positioned(
             bottom: 10,
             left: 20,

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Helpers/get_storage.dart';
+import '../Helpers/colors.dart';
+import '../Helpers/Strings/get_storage.dart';
 
 import '../Model/popular_shoes_model.dart';
 
@@ -13,7 +13,6 @@ class FavoriteController extends GetxController {
   void onInit() {
     super.onInit();
     loadFavorites();
-    print('isFavorreatyye ${favoriteList.length}');
   }
 
   bool isFavorite(PopularShoesModel product) {

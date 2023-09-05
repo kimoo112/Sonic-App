@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoes_store/Helpers/colors.dart';
+import '../../Helpers/colors.dart';
 
 class RandomProductsContainer extends StatelessWidget {
   const RandomProductsContainer({Key? key, required this.image})
@@ -11,7 +11,7 @@ class RandomProductsContainer extends StatelessWidget {
     return Container(
       width: 70.w,
       height: 80.h,
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       decoration:
           BoxDecoration(borderRadius: BorderRadius.circular(16), color: cWhite),
       alignment: Alignment.center,

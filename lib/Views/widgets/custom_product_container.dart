@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Views/screens/details_view.dart';
+import '../../Helpers/navigate.dart';
+import '../screens/details_view.dart';
 import '../../Helpers/colors.dart';
 import '../../Model/popular_shoes_model.dart';
 

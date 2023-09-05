@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../Helpers/size.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Helpers/colors.dart';
+import '../../Helpers/size.dart';
 
 class TotalCost extends StatelessWidget {
   const TotalCost({

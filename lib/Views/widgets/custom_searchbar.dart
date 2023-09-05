@@ -1,9 +1,9 @@
-import '../../Helpers/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../Helpers/colors.dart';
 import '../../Helpers/navigate.dart';
-import '../screens/search_view.dart';
+import '../screens/Search/search_view.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({

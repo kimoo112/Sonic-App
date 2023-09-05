@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../Helpers/colors.dart';
-import 'all_popular_shoes.dart';
-import '../widgets/arrivals_container.dart';
-import '../widgets/custom_searchbar.dart';
+import 'package:get/get.dart';
 
+import '../../Controller/google_auth_controller.dart';
+import '../../Helpers/colors.dart';
 import '../../Helpers/images.dart';
 import '../../Helpers/navigate.dart';
+import '../widgets/arrivals_container.dart';
 import '../widgets/badge_icon.dart';
+import '../widgets/custom_searchbar.dart';
 import '../widgets/popular_list_view.dart';
 import '../widgets/see_all.dart';
 import '../widgets/tab_bar.dart';
+import 'all_popular_shoes.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -22,11 +25,11 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  GoogleAuthController controller = Get.find();
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
-    
   }
 
   @override
@@ -37,8 +40,6 @@ class _HomeViewState extends State<HomeView>
 
   @override
   Widget build(BuildContext context) {
-  
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: cTransparent,
@@ -89,20 +90,15 @@ class _HomeViewState extends State<HomeView>
       ),
     );
   }
-//todo save the favorite bool in get storage 
-//todo see seyam store pageview to know why isnt scroll 
-//todo check out screen view 
-//todo image Picker 
-  InkWell leadingButton() {
-    return InkWell(
-        borderRadius: BorderRadius.circular(33),
-        onTap: () {},
-        child: SvgPicture.asset(
-          Assets.vectorsDrawer,
-          width: 20,
-          height: 2,
-          fit: BoxFit.none,
-        ));
+
+  Widget leadingButton() {
+    return IconButton(
+      onPressed: () {
+                  controller.logOut(context);
+    
+      },
+      icon: const Icon(IconlyLight.logout,color: cBackGround,),
+    );
   }
 
   Text selectCategory() {

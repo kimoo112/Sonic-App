@@ -4,10 +4,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
+import '../profile_view.dart';
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/navigate.dart';
 import '../OnBoarding/second_onbording_view.dart';
-import '../OnBoarding/third_onboarding_view.dart';
 import '../cart_view.dart';
 import 'dart:async';
 
@@ -43,7 +43,7 @@ class _BaseViewState extends State<BaseView> with TickerProviderStateMixin {
     const HomeView(),
     FavoriteView(),
     const SecondOnbordingView(),
-    const ThirdOnboardingView(),
+    const ProfileView(),
   ];
   @override
   void initState() {

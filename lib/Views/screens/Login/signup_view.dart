@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../Controller/google_auth_controller.dart';
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
@@ -74,32 +73,30 @@ class _SignupViewState extends State<SignupView> {
 
   CustomButton googleSignUpButton() {
     return CustomButton(
-                                    name:
-                                        'Sign In with Google '.toUpperCase(),
-                                    onTap: () {
-                                      controller.signInWithGoogle();
-                                    },
-                                    nameColor: cDark,
-                                    icon: Image.asset(Assets.iconsGoogleIcon),
-                                    color: cLightGrey.withOpacity(.3),
-                                  );
+      name: 'Sign In with Google '.toUpperCase(),
+      onTap: () {
+        controller.signInWithGoogle(context);
+      },
+      nameColor: cDark,
+      icon: Image.asset(Assets.iconsGoogleIcon),
+      color: cLightGrey.withOpacity(.3),
+    );
   }
 
   CustomButton signUpButton(BuildContext context) {
     return CustomButton(
-                                    name: 'Sign Up'.toUpperCase(),
-                                    onTap: () {
-                                      if (formKey.currentState!.validate()) {
-                                        getOff(const BaseView(), context);
-                                      } else {
-                                        autovalidateMode =
-                                            AutovalidateMode.always;
-                                        setState(() {});
-                                      }
-                                    },
-                                    nameColor: cLight,
-                                    color: cBlue.withOpacity(.95),
-                                  );
+      name: 'Sign Up'.toUpperCase(),
+      onTap: () {
+        if (formKey.currentState!.validate()) {
+          getOff(const BaseView(), context);
+        } else {
+          autovalidateMode = AutovalidateMode.always;
+          setState(() {});
+        }
+      },
+      nameColor: cLight,
+      color: cBlue.withOpacity(.95),
+    );
   }
 
   Align alreadyHaveAccount(BuildContext context) {

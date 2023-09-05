@@ -80,7 +80,7 @@ class _SigninViewState extends State<SigninView> {
                         CustomButton(
                           name: 'Sign In with Google '.toUpperCase(),
                           onTap: () {
-                            controller.signInWithGoogle();
+                            controller.signInWithGoogle(context);
                           },
                           nameColor: cDark,
                           icon: Image.asset(Assets.iconsGoogleIcon),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Views/screens/cart_view.dart';
+import '../Helpers/colors.dart';
+import '../Helpers/navigate.dart';
+import '../Views/screens/cart_view.dart';
 import '../Model/popular_shoes_model.dart';
 
 class CartController extends GetxController {
@@ -24,7 +24,7 @@ class CartController extends GetxController {
     priceOfProducts -= product.price;
   }
 
-  deleteAllCart(PopularShoesModel product) {
+  deleteAllCart() {
     cartList.clear();
     priceOfProducts = 0.0.obs;
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoes_store/Views/widgets/random_products_container.dart';
+import 'random_products_container.dart';
 
 import '../../Model/popular_shoes_model.dart';
 
