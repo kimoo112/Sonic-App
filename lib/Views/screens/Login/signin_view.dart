@@ -36,6 +36,7 @@ class _SigninViewState extends State<SigninView> {
             child: Padding(
               padding: EdgeInsets.only(top: 40.0.sp),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const Text('Hello Again!',
                       style:

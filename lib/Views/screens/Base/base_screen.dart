@@ -1,19 +1,19 @@
+import 'dart:async';
+
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
-import '../profile_view.dart';
+
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/navigate.dart';
 import '../OnBoarding/second_onbording_view.dart';
 import '../cart_view.dart';
-import 'dart:async';
-
-import '../home_view.dart';
-
 import '../favorite_view.dart';
+import '../home_view.dart';
+import '../profile_view.dart';
 
 class BaseView extends StatefulWidget {
   const BaseView({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _BaseViewState extends State<BaseView> with TickerProviderStateMixin {
     const HomeView(),
     FavoriteView(),
     const SecondOnbordingView(),
-    const ProfileView(),
+    ProfileView(),
   ];
   @override
   void initState() {

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../Controller/google_auth_controller.dart';
 import '../../Helpers/colors.dart';
-import '../../Helpers/images.dart';
 import '../../Helpers/navigate.dart';
 import '../widgets/arrivals_container.dart';
 import '../widgets/badge_icon.dart';
@@ -64,6 +62,7 @@ class _HomeViewState extends State<HomeView>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Hero(tag: 'null', child: CustomSearchBar()),
+              
               SizedBox(height: 22.h),
               selectCategory(),
               SizedBox(height: 22.h),
@@ -94,10 +93,12 @@ class _HomeViewState extends State<HomeView>
   Widget leadingButton() {
     return IconButton(
       onPressed: () {
-                  controller.logOut(context);
-    
+        controller.logOut(context);
       },
-      icon: const Icon(IconlyLight.logout,color: cBackGround,),
+      icon: const Icon(
+        IconlyLight.logout,
+        color: cBackGround,
+      ),
     );
   }
 

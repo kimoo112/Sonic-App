@@ -26,7 +26,9 @@ class FavoriteController extends GetxController {
     // storage.write('favorite_${product.id}', isFavoritee);
     // print('isFavore ${favoriteList.length}');
   }
-
+removeFavoriteFromStorage(PopularShoesModel product) {
+  storage.remove('favorite_${product.id}');
+}
   void loadFavorites() {
     
     for (var product in getPopularShoes) {
@@ -55,7 +57,14 @@ class FavoriteController extends GetxController {
       saveFavorite(product);
     showDeletedElegantSnackBar();
 
-      // Optionally, you can show a snackbar or other UI feedback here.
+  }
+   removeAllFavorite() {
+      for (var product in favoriteList) {
+    removeFavoriteFromStorage(product); // This will remove each favorite using its unique key.
+  }
+      favoriteList.clear();
+    showDeletedElegantSnackBar();
+
   }
 }
 

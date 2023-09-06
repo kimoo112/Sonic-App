@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import '../../../Model/popular_shoes_model.dart';
 import '../../widgets/badge_icon.dart';
@@ -19,7 +18,6 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
-  SearchController controller = Get.find();
   bool isEmpty = false;
   List<PopularShoesModel> searchedList = getPopularShoes;
   Future<void> searchForProducts(String value) async {

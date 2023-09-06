@@ -12,7 +12,7 @@ class SplashView extends StatelessWidget {
     return Scaffold(
       backgroundColor: cBlue,
       body: FlutterSplashScreen.scale(
-        backgroundColor: cBlue,
+        backgroundColor: cBackGround.withOpacity(.96),
         childWidget: Center(
           child: Image.asset(Assets.iconsLogo),
         ),

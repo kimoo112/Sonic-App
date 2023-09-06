@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shoes_store/Controller/favorite_controller.dart';
+import 'package:shoes_store/Controller/pick_image_controller.dart';
 import 'package:shoes_store/Views/screens/Base/base_screen.dart';
 
 import '../Helpers/colors.dart';
@@ -12,6 +14,9 @@ import 'cart_controller.dart';
 
 class GoogleAuthController extends GetxController {
   CartController controller = Get.find();
+  FavoriteController favcontroller = Get.find();
+  PickImageController imageController = Get.find();
+
 
   Future signInWithGoogle(context) async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -33,6 +38,8 @@ class GoogleAuthController extends GetxController {
     GoogleSignIn().disconnect();
     await FirebaseAuth.instance.signOut();
     controller.deleteAllCart();
+    imageController.imagePath!.value = '';
+    favcontroller.removeAllFavorite();
     // ignore: use_build_context_synchronously
     getOff(const SigninView(), context);
   }
