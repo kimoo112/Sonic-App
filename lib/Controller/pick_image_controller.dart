@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shoes_store/Helpers/Strings/get_storage.dart';
+import '../Helpers/Strings/get_storage.dart';
 
 class PickImageController extends GetxController {
   final picker = ImagePicker();

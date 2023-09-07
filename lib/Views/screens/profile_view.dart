@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Controller/cart_controller.dart';
-import 'package:shoes_store/Controller/favorite_controller.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Views/widgets/favorite_cart_product_container.dart';
-import 'package:shoes_store/Views/widgets/logout_button.dart';
-import 'package:shoes_store/Views/widgets/profile_image.dart';
-import 'package:shoes_store/Views/widgets/username_email.dart';
+import '../../Controller/cart_controller.dart';
+import '../../Controller/favorite_controller.dart';
+import '../../Helpers/colors.dart';
+import '../widgets/favorite_cart_product_container.dart';
+import '../widgets/logout_button.dart';
+import '../widgets/profile_image.dart';
+import '../widgets/username_email.dart';
 
 // ignore: must_be_immutable
 class ProfileView extends StatelessWidget {

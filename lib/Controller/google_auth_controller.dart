@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shoes_store/Controller/favorite_controller.dart';
-import 'package:shoes_store/Controller/pick_image_controller.dart';
-import 'package:shoes_store/Views/screens/Base/base_screen.dart';
 
 import '../Helpers/colors.dart';
 import '../Helpers/navigate.dart';
+import '../Views/screens/Base/base_screen.dart';
 import '../Views/screens/Login/signin_view.dart';
 import 'cart_controller.dart';
+import 'favorite_controller.dart';
+import 'pick_image_controller.dart';
 
 class GoogleAuthController extends GetxController {
   CartController controller = Get.find();
@@ -80,20 +80,20 @@ void showGoogleUserNullSnackBar() {
 
 void showLogoutSnackBar() {
   Get.snackbar("Logged Out", "See you again soon!",
-      icon: Icon(Icons.exit_to_app, color: Colors.white),
+      icon: const Icon(Icons.exit_to_app, color: Colors.white),
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: Colors.blue,
       colorText: Colors.white,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       borderRadius: 10,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       forwardAnimationCurve: Curves.easeInOutCirc,
       reverseAnimationCurve: Curves.easeOutCirc,
       mainButton: TextButton(
         onPressed: () {
           Get.back(); // Close the snackbar
         },
-        child: Text(
+        child: const Text(
           "CLOSE",
           style: TextStyle(color: Colors.white),
         ),

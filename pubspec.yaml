@@ -18,6 +18,7 @@ dependencies:
   firebase_core_desktop: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_credit_card: ^3.0.7
   flutter_iconly: ^1.0.2
   flutter_launcher_icons: ^0.13.1
   flutter_screenutil: ^5.9.0

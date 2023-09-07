@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:shoes_store/Helpers/navigate.dart';
+import 'package:shoes_store/Views/screens/check_out_view.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Helpers/colors.dart';
@@ -10,12 +12,13 @@ class TotalCost extends StatelessWidget {
   const TotalCost({
     super.key,
     required this.controller,
+     this.onTap,
     required this.isEmpty,
   });
 
   final CartController controller;
   final bool isEmpty;
-
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     bool isEmpty = controller.cartList.isEmpty;
@@ -88,7 +91,10 @@ class TotalCost extends StatelessWidget {
               ),
               const Spacer(),
               InkWell(
-                onTap: () {},
+                onTap: onTap ??
+                    () {
+                      getTo(const CheckOutView(), context);
+                    },
                 splashColor: cDismiss,
                 borderRadius: BorderRadius.circular(12),
                 child: Container(

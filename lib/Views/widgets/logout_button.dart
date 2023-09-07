@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Controller/google_auth_controller.dart';
+import '../../Controller/google_auth_controller.dart';
 
 GoogleAuthController controller = Get.find();
 

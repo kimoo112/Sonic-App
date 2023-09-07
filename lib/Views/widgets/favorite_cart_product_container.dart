@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shoes_store/Controller/cart_controller.dart';
-import 'package:shoes_store/Controller/favorite_controller.dart';
-import 'package:shoes_store/Helpers/colors.dart';
+import '../../Controller/cart_controller.dart';
+import '../../Controller/favorite_controller.dart';
+import '../../Helpers/colors.dart';
 
 class FavoritesAndCartProducts extends StatelessWidget {
   const FavoritesAndCartProducts({

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/Strings/get_storage.dart';
-import 'package:shoes_store/Helpers/colors.dart';
+
+import '../Helpers/Strings/get_storage.dart';
+import '../Helpers/colors.dart';
 
 class SwitcherController extends GetxController {
   @override
@@ -18,11 +19,7 @@ class SwitcherController extends GetxController {
 
     if (isAllowed.value == true) {
       switcherAllowed();
-
     }
-
-   
-
   }
 
   saveSwitcher() {
@@ -43,7 +40,7 @@ switcherAllowed() {
     snackPosition: SnackPosition.BOTTOM,
     icon: const Icon(Icons.notifications_active, color: cBlue),
     shouldIconPulse: false,
-    margin: EdgeInsets.all(12),
+    margin: const EdgeInsets.all(12),
     barBlur: 20,
     isDismissible: true,
     duration: const Duration(seconds: 2),
@@ -58,10 +55,10 @@ switcherAllowed() {
           offset: Offset(0, 10)),
     ],
     titleText: const Text("Notifications Allowed",
-        style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 16, color: cBlue)),
+        style:
+            TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: cBlue)),
     messageText: const Text("You'll receive updates and news!",
-        style: TextStyle(color:cLightGrey)),
+        style: TextStyle(color: cLightGrey)),
   );
 }
 

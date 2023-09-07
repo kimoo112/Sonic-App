@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Controller/switcher_controller.dart';
-import 'package:shoes_store/Helpers/colors.dart';
+import '../../Controller/switcher_controller.dart';
+import '../../Helpers/colors.dart';
 
 // ignore: must_be_immutable
 class NotficationView extends StatelessWidget {

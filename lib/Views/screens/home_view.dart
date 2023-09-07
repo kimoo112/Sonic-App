@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoes_store/Views/widgets/logout_button.dart';
+import '../widgets/logout_button.dart';
 
 import '../../Helpers/colors.dart';
 import '../../Helpers/navigate.dart';

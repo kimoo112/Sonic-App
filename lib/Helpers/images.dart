@@ -21,6 +21,10 @@ class Assets {
   /// assets/images/ArrivalsShoes.png
   static const String imagesArrivalsShoes = "assets/images/ArrivalsShoes.png";
 
+  /// Assets for imagesCheckoutDoneLottie
+  /// assets/images/CheckoutDoneLottie.json
+  static const String imagesCheckoutDoneLottie = "assets/images/CheckoutDoneLottie.json";
+
   /// Assets for imagesEmptyCartLottie
   /// assets/images/EmptyCartLottie.json
   static const String imagesEmptyCartLottie = "assets/images/EmptyCartLottie.json";
@@ -29,9 +33,9 @@ class Assets {
   /// assets/images/EmptyFavoriteLottie.json
   static const String imagesEmptyFavoriteLottie = "assets/images/EmptyFavoriteLottie.json";
 
-  /// Assets for imagesEmptyLottie
-  /// assets/images/EmptyLottie.json
-  static const String imagesEmptyLottie = "assets/images/EmptyLottie.json";
+  /// Assets for imagesEmptySearch
+  /// assets/images/EmptySearch.json
+  static const String imagesEmptySearch = "assets/images/EmptySearch.json";
 
   /// Assets for imagesHomeShoes1
   /// assets/images/homeShoes1.png

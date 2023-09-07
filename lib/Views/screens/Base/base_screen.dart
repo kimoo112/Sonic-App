@@ -6,7 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shoes_store/Views/screens/notfication_view.dart';
+import '../notfication_view.dart';
 
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/navigate.dart';

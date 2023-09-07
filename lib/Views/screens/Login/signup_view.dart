@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shoes_store/Controller/create_user_email_password_controller.dart';
+import 'package:shoes_store/Views/screens/Base/base_screen.dart';
+
 import '../../../Controller/google_auth_controller.dart';
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/images.dart';
 import '../../../Helpers/navigate.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textfield.dart';
-import '../Base/base_screen.dart';
 import 'signin_view.dart';
 
 class SignupView extends StatefulWidget {
@@ -21,6 +23,7 @@ class _SignupViewState extends State<SignupView> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
   GoogleAuthController controller = Get.find();
+  CreateUserEmailPasswordController createUsercontroller = Get.find();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isVisible = true;
@@ -36,8 +39,10 @@ class _SignupViewState extends State<SignupView> {
                   children: [
                     Column(children: [
                       const Text('Register Account',
-                          style: TextStyle(color: cBlue,
-                              fontSize: 32, fontWeight: FontWeight.w700)),
+                          style: TextStyle(
+                              color: cBlue,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700)),
                       const SizedBox(height: 10),
                       const Text(
                         'Fill your details or continue with social media',
@@ -86,9 +91,20 @@ class _SignupViewState extends State<SignupView> {
   CustomButton signUpButton(BuildContext context) {
     return CustomButton(
       name: 'Sign Up'.toUpperCase(),
-      onTap: () {
+      onTap: ()  {
         if (formKey.currentState!.validate()) {
-          getOff(const BaseView(), context);
+          bool isSignUpSuccessful =  createUsercontroller.signUp(
+            emailController.text,
+            passController.text,
+            nameController.text,
+            context,
+          );
+
+          if (isSignUpSuccessful) {
+            getOff(const BaseView(), context);
+          } else {
+            // Handle the error in UI, maybe show a snackbar?
+          }
         } else {
           autovalidateMode = AutovalidateMode.always;
           setState(() {});

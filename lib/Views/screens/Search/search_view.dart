@@ -60,7 +60,7 @@ class _SearchViewState extends State<SearchView> {
                 ),
               ),
             ),
-            isEmpty? Lottie.asset(Assets.imagesEmptyLottie,animate: true):
+            isEmpty? Lottie.asset(Assets.imagesEmptySearch,animate: true):
              Expanded(
                 child: PopularShoesGridView(
               getPopularShoes:searchedList,
