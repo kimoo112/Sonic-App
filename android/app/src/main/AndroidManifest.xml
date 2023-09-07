@@ -1,8 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/><resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/*,@raw/slow_spring_board" />
     <application
         android:label="Sonic"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

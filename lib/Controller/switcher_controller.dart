@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,21 @@ class SwitcherController extends GetxController {
     saveSwitcher();
 
     if (isAllowed.value == true) {
+      AwesomeNotifications().createNotification(
+          schedule: 
+          NotificationAndroidCrontab.minutely(
+            
+              referenceDateTime: DateTime.now()),
+          content: NotificationContent(
+              id: 10,
+              
+              channelKey: 'basic key',
+              title: 'Discover What\'s New!',
+              body: 'Step inside and explore the latest in footwear elegance.',
+              actionType: ActionType.Default));
       switcherAllowed();
+    } else {
+      AwesomeNotifications().cancelAll();
     }
   }
 

@@ -1,20 +1,33 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+
 import 'Helpers/Binding/binding.dart';
 import 'Helpers/colors.dart';
 import 'Views/screens/Splash/splash_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+  AwesomeNotifications().initialize(
+    null,
+    [
+      NotificationChannel(
+        channelKey: 'basic key',
+        channelName: 'Basic notifications',
+        channelDescription: 'Notification channel for basic tests',
+        ledColor: Colors.white,
+        importance: NotificationImportance.High,
+      ),
+    ],
   );
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
