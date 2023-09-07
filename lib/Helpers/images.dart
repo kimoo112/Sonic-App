@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for iconsAppIcon
+  /// assets/icons/AppIcon.png
+  static const String iconsAppIcon = "assets/icons/AppIcon.png";
+
   /// Assets for iconsGoogleIcon
   /// assets/icons/googleIcon.png
   static const String iconsGoogleIcon = "assets/icons/googleIcon.png";
@@ -20,10 +24,6 @@ class Assets {
   /// Assets for imagesEmptyCartLottie
   /// assets/images/EmptyCartLottie.json
   static const String imagesEmptyCartLottie = "assets/images/EmptyCartLottie.json";
-
-  /// Assets for imagesEmptyFavorite
-  /// assets/images/EmptyFavorite.svg
-  static const String imagesEmptyFavorite = "assets/images/EmptyFavorite.svg";
 
   /// Assets for imagesEmptyFavoriteLottie
   /// assets/images/EmptyFavoriteLottie.json

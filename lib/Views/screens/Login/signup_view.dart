@@ -36,7 +36,7 @@ class _SignupViewState extends State<SignupView> {
                   children: [
                     Column(children: [
                       const Text('Register Account',
-                          style: TextStyle(
+                          style: TextStyle(color: cBlue,
                               fontSize: 32, fontWeight: FontWeight.w700)),
                       const SizedBox(height: 10),
                       const Text(

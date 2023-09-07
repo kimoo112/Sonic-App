@@ -24,7 +24,7 @@ class FavoriteView extends StatelessWidget {
         backgroundColor: cTransparent,
         centerTitle: true,
         title: const Text(
-          'My Favourite',
+          'My Favorites',
           style: TextStyle(
               color: cBackGround, fontSize: 20, fontWeight: FontWeight.w600),
         ),

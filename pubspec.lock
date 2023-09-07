@@ -709,6 +709,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
+  switcher:
+    dependency: "direct main"
+    description:
+      name: switcher
+      sha256: edbe9f80007116d7195d6b37cd8d401b97e2e894157e1bea98175f308102ab2b
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0"
   term_glyph:
     dependency: transitive
     description:

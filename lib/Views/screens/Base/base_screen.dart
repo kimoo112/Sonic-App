@@ -6,10 +6,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shoes_store/Views/screens/notfication_view.dart';
 
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/navigate.dart';
-import '../OnBoarding/second_onbording_view.dart';
 import '../cart_view.dart';
 import '../favorite_view.dart';
 import '../home_view.dart';
@@ -42,7 +42,7 @@ class _BaseViewState extends State<BaseView> with TickerProviderStateMixin {
   List<Widget> pages = [
     const HomeView(),
     FavoriteView(),
-    const SecondOnbordingView(),
+    NotficationView(),
     ProfileView(),
   ];
   @override

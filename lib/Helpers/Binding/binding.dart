@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:shoes_store/Controller/pick_image_controller.dart';
+import 'package:shoes_store/Controller/switcher_controller.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Controller/favorite_controller.dart';
@@ -11,6 +12,7 @@ class GetBingding implements Bindings {
     Get.put(PickImageController());
     Get.put(CartController());
     Get.put(FavoriteController());
+    Get.put(SwitcherController());
     Get.put(GoogleAuthController());
   }
 }

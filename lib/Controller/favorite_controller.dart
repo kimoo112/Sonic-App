@@ -63,7 +63,6 @@ removeFavoriteFromStorage(PopularShoesModel product) {
     removeFavoriteFromStorage(product); // This will remove each favorite using its unique key.
   }
       favoriteList.clear();
-    showDeletedElegantSnackBar();
 
   }
 }

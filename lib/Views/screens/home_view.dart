@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:shoes_store/Views/widgets/logout_button.dart';
 
-import '../../Controller/google_auth_controller.dart';
 import '../../Helpers/colors.dart';
 import '../../Helpers/navigate.dart';
 import '../widgets/arrivals_container.dart';
@@ -23,7 +21,6 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  GoogleAuthController controller = Get.find();
   @override
   void initState() {
     super.initState();
@@ -48,7 +45,7 @@ class _HomeViewState extends State<HomeView>
               color: cBackGround, fontSize: 24.sp, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
-        leading: leadingButton(),
+        leading: logoutButton(context,cBackGround),
         actions: [
           BadgeIcon(
             onTap: () {},
@@ -62,7 +59,6 @@ class _HomeViewState extends State<HomeView>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Hero(tag: 'null', child: CustomSearchBar()),
-              
               SizedBox(height: 22.h),
               selectCategory(),
               SizedBox(height: 22.h),
@@ -86,18 +82,6 @@ class _HomeViewState extends State<HomeView>
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget leadingButton() {
-    return IconButton(
-      onPressed: () {
-        controller.logOut(context);
-      },
-      icon: const Icon(
-        IconlyLight.logout,
-        color: cBackGround,
       ),
     );
   }

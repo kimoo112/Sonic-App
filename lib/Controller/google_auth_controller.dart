@@ -17,7 +17,6 @@ class GoogleAuthController extends GetxController {
   FavoriteController favcontroller = Get.find();
   PickImageController imageController = Get.find();
 
-
   Future signInWithGoogle(context) async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     if (googleUser == null) {
@@ -42,6 +41,7 @@ class GoogleAuthController extends GetxController {
     favcontroller.removeAllFavorite();
     // ignore: use_build_context_synchronously
     getOff(const SigninView(), context);
+    showLogoutSnackBar();
   }
 }
 
@@ -76,4 +76,26 @@ void showGoogleUserNullSnackBar() {
     reverseAnimationCurve: Curves.easeInOutCubic,
     icon: const Icon(Iconsax.security_safe, size: 35.0, color: Colors.white),
   );
+}
+
+void showLogoutSnackBar() {
+  Get.snackbar("Logged Out", "See you again soon!",
+      icon: Icon(Icons.exit_to_app, color: Colors.white),
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.blue,
+      colorText: Colors.white,
+      duration: Duration(seconds: 3),
+      borderRadius: 10,
+      margin: EdgeInsets.all(10),
+      forwardAnimationCurve: Curves.easeInOutCirc,
+      reverseAnimationCurve: Curves.easeOutCirc,
+      mainButton: TextButton(
+        onPressed: () {
+          Get.back(); // Close the snackbar
+        },
+        child: Text(
+          "CLOSE",
+          style: TextStyle(color: Colors.white),
+        ),
+      ));
 }

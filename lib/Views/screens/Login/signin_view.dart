@@ -40,7 +40,7 @@ class _SigninViewState extends State<SigninView> {
                 children: <Widget>[
                   const Text('Hello Again!',
                       style:
-                          TextStyle(fontSize: 32, fontWeight: FontWeight.w700)),
+                          TextStyle(color:cBlue,fontSize: 32, fontWeight: FontWeight.w700)),
                   SizedBox(height: 10.h),
                   Text(
                     'Fill your details or continue with social media',
@@ -54,7 +54,6 @@ class _SigninViewState extends State<SigninView> {
                     child: Column(
                       children: [
                         mailField(),
-                        SizedBox(height: 15.h),
                         passwordField(),
                       ],
                     ),
