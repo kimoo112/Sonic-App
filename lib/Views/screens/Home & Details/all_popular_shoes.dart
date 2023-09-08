@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
-import '../../Helpers/colors.dart';
-import '../../Model/popular_shoes_model.dart';
-import '../widgets/badge_icon.dart';
-import '../widgets/popular_grid_view.dart';
+import '../../../Helpers/colors.dart';
+import '../../../Model/popular_shoes_model.dart';
+import '../../widgets/badge_icon.dart';
+import '../../widgets/popular_grid_view.dart';
 
 class AllPopular extends StatelessWidget {
   const AllPopular({Key? key}) : super(key: key);
@@ -37,7 +37,6 @@ class AllPopular extends StatelessWidget {
             )
           ],
         ),
-        // ToDo Shimmer
         body:  PopularShoesGridView(getPopularShoes:getPopularShoes,));
   }
 }

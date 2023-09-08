@@ -63,29 +63,9 @@ class _SigninViewState extends State<SigninView> {
                     padding: EdgeInsets.all(12.0.sp),
                     child: Column(
                       children: [
-                        CustomButton(
-                          name: 'Sign In'.toUpperCase(),
-                          onTap: () {
-                            if (formKey.currentState!.validate()) {
-                              getOff(const BaseView(), context);
-                            } else {
-                              autovalidateMode = AutovalidateMode.always;
-                              setState(() {});
-                            }
-                          },
-                          nameColor: cLight,
-                          color: cBlue.withOpacity(.95),
-                        ),
+                        _signinButton(context),
                         SizedBox(height: 11.h),
-                        CustomButton(
-                          name: 'Sign In with Google '.toUpperCase(),
-                          onTap: () {
-                            controller.signInWithGoogle(context);
-                          },
-                          nameColor: cDark,
-                          icon: Image.asset(Assets.iconsGoogleIcon),
-                          color: cLightGrey.withOpacity(.3),
-                        ),
+                        _signinWithGoogleButton(context),
                       ],
                     ),
                   ),
@@ -97,6 +77,34 @@ class _SigninViewState extends State<SigninView> {
         ],
       ),
     );
+  }
+
+  CustomButton _signinWithGoogleButton(BuildContext context) {
+    return CustomButton(
+                        name: 'Sign In with Google '.toUpperCase(),
+                        onTap: () {
+                          controller.signInWithGoogle(context);
+                        },
+                        nameColor: cDark,
+                        icon: Image.asset(Assets.iconsGoogleIcon),
+                        color: cLightGrey.withOpacity(.3),
+                      );
+  }
+
+  CustomButton _signinButton(BuildContext context) {
+    return CustomButton(
+                        name: 'Sign In'.toUpperCase(),
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            getOff(const BaseView(), context);
+                          } else {
+                            autovalidateMode = AutovalidateMode.always;
+                            setState(() {});
+                          }
+                        },
+                        nameColor: cLight,
+                        color: cBlue.withOpacity(.95),
+                      );
   }
 
   CustomTextField mailField() {

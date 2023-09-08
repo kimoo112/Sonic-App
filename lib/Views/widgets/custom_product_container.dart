@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../Helpers/navigate.dart';
-import '../screens/details_view.dart';
-import '../../Helpers/colors.dart';
-import '../../Model/popular_shoes_model.dart';
+import '../screens/Home%20&%20Details/details_view.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Controller/favorite_controller.dart';
+import '../../Helpers/colors.dart';
+import '../../Helpers/navigate.dart';
+import '../../Model/popular_shoes_model.dart';
 import 'favorite_button.dart';
 
 class CustomProductContainer extends StatefulWidget {
@@ -37,7 +37,6 @@ class _CustomProductContainerState extends State<CustomProductContainer> {
 
   @override
   Widget build(BuildContext context) {
-    
     return InkWell(
       borderRadius: BorderRadius.circular(16),
       splashColor: cBackGround.withOpacity(.9),

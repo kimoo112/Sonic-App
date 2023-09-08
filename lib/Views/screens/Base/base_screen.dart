@@ -6,14 +6,15 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
-import '../notfication_view.dart';
+import '../Cart%20&%20Favorites/cart_view.dart';
+import '../Cart%20&%20Favorites/favorite_view.dart';
+import '../Home%20&%20Details/home_view.dart';
 
 import '../../../Helpers/colors.dart';
 import '../../../Helpers/navigate.dart';
-import '../cart_view.dart';
-import '../favorite_view.dart';
-import '../home_view.dart';
-import '../profile_view.dart';
+
+import '../Notificaion/notfication_view.dart';
+import '../Profile/profile_view.dart';
 
 class BaseView extends StatefulWidget {
   const BaseView({Key? key}) : super(key: key);

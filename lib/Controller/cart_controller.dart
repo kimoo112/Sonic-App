@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import '../Views/screens/Cart%20&%20Favorites/cart_view.dart';
 import '../Helpers/colors.dart';
 import '../Helpers/navigate.dart';
-import '../Views/screens/cart_view.dart';
 import '../Model/popular_shoes_model.dart';
 
 class CartController extends GetxController {

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../Helpers/images.dart';
-import '../../Helpers/size.dart';
 
-import '../../Controller/cart_controller.dart';
-import '../../Controller/favorite_controller.dart';
-import '../../Helpers/colors.dart';
-import '../widgets/add_to_cart_button.dart';
-import '../widgets/badge_icon.dart';
-import '../widgets/favorite_button.dart';
-import '../widgets/get_back_arrow.dart';
-import '../widgets/porduct_info.dart';
-import '../widgets/random_list_view.dart';
+import '../../../Controller/cart_controller.dart';
+import '../../../Controller/favorite_controller.dart';
+import '../../../Helpers/colors.dart';
+import '../../../Helpers/images.dart';
+import '../../../Helpers/size.dart';
+import '../../widgets/add_to_cart_button.dart';
+import '../../widgets/badge_icon.dart';
+import '../../widgets/favorite_button.dart';
+import '../../widgets/get_back_arrow.dart';
+import '../../widgets/porduct_info.dart';
+import '../../widgets/random_list_view.dart';
 
 // ignore: must_be_immutable
 class DetailsView extends StatelessWidget {
@@ -58,32 +58,13 @@ class DetailsView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ProductInfo(model: model, price: price),
-                    const Column(
-                      children: [],
-                    ),
-                    SizedBox(
-                      height: 30.h,
-                    ),
+                    SizedBox(height: 30.h,),
                   ],
                 ),
-                theStand(context),
-                Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        favoriteButton(),
-                        AddToCartButton(controller: controller, index: index),
-                      ],
-                    )),
-                productImage(context),
-                Positioned(
-                    bottom: kWidth(context) / 3,
-                    right: 0,
-                    left: 0,
-                    child: theDescription()),
+                _theStand(context),
+                _addToFavoriteAndAddToCartRow(),
+                _productImage(context),
+                 _theDescription(context),
                 Positioned(
                   bottom: kWidth(context) / 1.9,
                   right: 0,
@@ -94,6 +75,20 @@ class DetailsView extends StatelessWidget {
             ),
           ),
         ));
+  }
+
+  Positioned _addToFavoriteAndAddToCartRow() {
+    return Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      favoriteButton(),
+                      AddToCartButton(controller: controller, index: index),
+                    ],
+                  ));
   }
 
   Text screenTitle() {
@@ -107,7 +102,7 @@ class DetailsView extends StatelessWidget {
     );
   }
 
-  Positioned productImage(BuildContext context) {
+  Positioned _productImage(BuildContext context) {
     return Positioned(
       bottom: kWidth(context) / 1.2,
       right: 0.h,
@@ -127,7 +122,7 @@ class DetailsView extends StatelessWidget {
         child: FavoriteButton(favController: favController, index: index));
   }
 
-  Positioned theStand(context) {
+  Positioned _theStand(context) {
     return Positioned(
         top: 0.h,
         bottom: kWidth(context) / 8.h,
@@ -138,8 +133,12 @@ class DetailsView extends StatelessWidget {
         ));
   }
 
-  Row theDescription() {
-    return Row(
+  Positioned _theDescription(context) {
+    return Positioned(
+                    bottom: kWidth(context) / 3,
+                    right: 0,
+                    left: 0,
+                    child:Row(
       children: [
         Flexible(
             child: Text(
@@ -149,6 +148,6 @@ class DetailsView extends StatelessWidget {
           textAlign: TextAlign.justify,
         )),
       ],
-    );
+    ));
   }
 }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../widgets/logout_button.dart';
+import '../../../Helpers/navigate.dart';
+import '../Home%20&%20Details/all_popular_shoes.dart';
+import '../../widgets/arrivals_container.dart';
+import '../../widgets/badge_icon.dart';
+import '../../widgets/custom_searchbar.dart';
+import '../../widgets/logout_button.dart';
+import '../../widgets/popular_list_view.dart';
+import '../../widgets/see_all.dart';
+import '../../widgets/tab_bar.dart';
+import '../../../Helpers/colors.dart';
 
-import '../../Helpers/colors.dart';
-import '../../Helpers/navigate.dart';
-import '../widgets/arrivals_container.dart';
-import '../widgets/badge_icon.dart';
-import '../widgets/custom_searchbar.dart';
-import '../widgets/popular_list_view.dart';
-import '../widgets/see_all.dart';
-import '../widgets/tab_bar.dart';
-import 'all_popular_shoes.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);

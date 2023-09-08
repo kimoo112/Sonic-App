@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Views/screens/Base/base_screen.dart';
+import '../Helpers/navigate.dart';
+import '../Views/screens/Base/base_screen.dart';
 
 class CreateUserEmailPasswordController extends GetxController {
   signUp(emailAddress, password, name, context) async {

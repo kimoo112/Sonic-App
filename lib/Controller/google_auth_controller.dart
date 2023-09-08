@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:iconsax/iconsax.dart';
+import '../Helpers/Strings/get_storage.dart';
 
 import '../Helpers/colors.dart';
 import '../Helpers/navigate.dart';
@@ -38,6 +39,7 @@ class GoogleAuthController extends GetxController {
     await FirebaseAuth.instance.signOut();
     controller.deleteAllCart();
     imageController.imagePath!.value = '';
+    storage.write('imagePath', imageController.imagePath?.value);
     favcontroller.removeAllFavorite();
     // ignore: use_build_context_synchronously
     getOff(const SigninView(), context);

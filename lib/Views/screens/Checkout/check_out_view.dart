@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:shoes_store/Controller/cart_controller.dart';
-import 'package:shoes_store/Helpers/colors.dart';
-import 'package:shoes_store/Helpers/images.dart';
-import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Helpers/size.dart';
-import 'package:shoes_store/Views/screens/Base/base_screen.dart';
-import 'package:shoes_store/Views/widgets/total_cost.dart';
+import '../../../Controller/cart_controller.dart';
+import '../../../Helpers/colors.dart';
+import '../../../Helpers/images.dart';
+import '../../../Helpers/navigate.dart';
+import '../../../Helpers/size.dart';
+import '../Base/base_screen.dart';
+import '../../widgets/checkout_text_field.dart';
+import '../../widgets/get_back_arrow.dart';
+import '../../widgets/total_cost.dart';
 
 class CheckOutView extends StatefulWidget {
   const CheckOutView({Key? key}) : super(key: key);
@@ -25,6 +27,7 @@ class _CheckOutViewState extends State<CheckOutView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const GetBackArrow(),
         scrolledUnderElevation: 0,
         title: const Text('Checkout'),
         centerTitle: true,
@@ -43,28 +46,22 @@ class _CheckOutViewState extends State<CheckOutView> {
                     key: formKey,
                     child: Column(
                       children: [
-                        _textField("First Name"),
-                        _textField("Last Name"),
-                        _textField("Address Line 1"),
-                        _textField("Address Line 2 (Optional)"),
-                        _textField("City"),
-                        _textField("Postal/Zip Code"),
-                        _textField("Country"),
-                        _textField("Phone Number"),
+                        textField("First Name"),
+                        textField("Last Name"),
+                        textField("Address Line 1"),
+                        textField("Address Line 2 (Optional)"),
+                        textField("City"),
+                        textField("Postal/Zip Code"),
+                        textField("Country"),
+                        textField("Phone Number"),
                       ],
                     ),
                   ),
                   const SizedBox(height: 16),
-
                   _sectionTitle("Payment Method"),
                   _dropDownField(["Credit Card", "PayPal", "Other"],
                       "Select Payment Method"),
-
-                  // Include fields for credit card if 'Credit Card' is selected
-                  // ...
-
                   const SizedBox(height: 16),
-
                   Row(
                     children: [
                       Checkbox(
@@ -112,30 +109,6 @@ class _CheckOutViewState extends State<CheckOutView> {
     );
   }
 
-  Widget _textField(String label) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5.0),
-      child: TextFormField(
-        validator: (value) {
-          if (value!.isEmpty) {
-            return 'Please enter your $label';
-          }
-          return null;
-        },
-        autovalidateMode: AutovalidateMode.always,
-        decoration: InputDecoration(
-          labelText: label,
-          labelStyle: const TextStyle(color: cLightGrey),
-          focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: cBlue, width: 2.0),
-          ),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: cDark, width: 1.0),
-          ),
-        ),
-      ),
-    );
-  }
 
   Widget _dropDownField(List<String> items, String label) {
     return Padding(
@@ -206,7 +179,10 @@ class _CheckOutViewState extends State<CheckOutView> {
                     foregroundColor: Colors.white,
                     backgroundColor: cBlue,
                     minimumSize: const Size(400, 55)),
-                child: const Text('Explore More',style: TextStyle(fontSize: 20),),
+                child: const Text(
+                  'Explore More',
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
             ],
           ),

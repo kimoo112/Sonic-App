@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Views/screens/check_out_view.dart';
+import '../../Helpers/navigate.dart';
+import '../screens/Checkout/check_out_view.dart';
 
 import '../../Controller/cart_controller.dart';
 import '../../Helpers/colors.dart';

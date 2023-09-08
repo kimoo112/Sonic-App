@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shoes_store/Controller/create_user_email_password_controller.dart';
-import 'package:shoes_store/Views/screens/Base/base_screen.dart';
+import '../../../Controller/create_user_email_password_controller.dart';
+import '../Base/base_screen.dart';
 
 import '../../../Controller/google_auth_controller.dart';
 import '../../../Helpers/colors.dart';

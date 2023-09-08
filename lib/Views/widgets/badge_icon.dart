@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:shoes_store/Helpers/navigate.dart';
-import 'package:shoes_store/Views/screens/cart_view.dart';
+import 'package:shoes_store/Views/screens/Cart%20&%20Favorites/cart_view.dart';
 import '../../Controller/cart_controller.dart';
 import '../../Helpers/colors.dart';
 

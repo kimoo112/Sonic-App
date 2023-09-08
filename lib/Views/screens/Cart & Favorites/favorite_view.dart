@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shoes_store/Controller/favorite_controller.dart';
+import 'package:shoes_store/Helpers/colors.dart';
 import 'package:shoes_store/Helpers/images.dart';
-import '../../Controller/favorite_controller.dart';
-import '../widgets/badge_icon.dart';
-import '../../Helpers/colors.dart';
-import '../widgets/favorite_grid_view.dart';
+import 'package:shoes_store/Views/widgets/badge_icon.dart';
+import 'package:shoes_store/Views/widgets/favorite_grid_view.dart';
 
 class FavoriteView extends StatelessWidget {
   FavoriteView({Key? key}) : super(key: key);

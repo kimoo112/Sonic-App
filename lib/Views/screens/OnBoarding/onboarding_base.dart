@@ -1,16 +1,14 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../Base/base_screen.dart';
+import 'package:shoes_store/Views/widgets/auth_state.dart';
+
 import '../../../Helpers/colors.dart';
-import 'second_onbording_view.dart';
-import 'third_onboarding_view.dart';
+import '../../../Helpers/navigate.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/vectors.dart';
-
-import '../../../Helpers/navigate.dart';
-import '../Login/signin_view.dart';
 import 'first_onbording_view.dart';
+import 'second_onbording_view.dart';
+import 'third_onboarding_view.dart';
 
 class OnboardingBase extends StatefulWidget {
   const OnboardingBase({Key? key}) : super(key: key);
@@ -44,8 +42,6 @@ class _OnboardingBaseState extends State<OnboardingBase> {
               },
               controller: _controller,
               children: onboardingList),
-
-          // dot indicators
           Positioned(
             bottom: 80,
             left: 50,
@@ -80,18 +76,7 @@ class _OnboardingBaseState extends State<OnboardingBase> {
             child: CustomButton(
               onTap: () {
                 isLast
-                    ? getOff(
-                        StreamBuilder<User?>(
-                          stream: FirebaseAuth.instance.authStateChanges(),
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData) {
-                              return const BaseView();
-                            } else {
-                              return const SigninView();
-                            }
-                          },
-                        ),
-                        context)
+                    ? getOff(const AuthStateChanges(), context)
                     : _controller.nextPage(
                         duration: const Duration(seconds: 2),
                         curve: Curves.easeInOutCubicEmphasized);
