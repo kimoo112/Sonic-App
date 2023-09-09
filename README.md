@@ -1,16 +1,9 @@
-# shoes_store
+# SONIC
 
 A new Flutter project.
 
-## Getting Started
+Step into Sonic, a trendsetting shoe e-commerce platform powered by GetX for reactive state management. Dive into an enhanced user experience with Firebase authentication, ensuring secure and seamless logins. Effortlessly pick and upload images with our advanced image picker, making profile customization a breeze. Get Storage ensures swift and efficient local data management, while our refined search and filter capabilities ensure you find the perfect pair swiftly.Implemented with Awesome Notification for timely updates and alerts. All crafted meticulously using the MVC design pattern for optimal performance and maintainability.
 
-This project is a starting point for a Flutter application.
+![Logo Without stroke](https://github.com/kimoo112/Sonic-App/assets/130873071/19046dd1-7bd3-44c1-9e73-0e3d07ddd4e7)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Sonic Design 3x](https://github.com/kimoo112/Sonic-App/assets/130873071/4fc86ae6-25e0-468a-8ee8-61c4fecde09d)
